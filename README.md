@@ -1,93 +1,48 @@
 # miniHry
 
-Malé hry pro ministranty. Responzivní aplikace v češtině pro mobil, tablet i počítač, bez účtů, reklam, analytiky a backendu. Původní schválený vizuální podklad zůstává ve složce `navrh/`.
+**Malé hry pro ministranty.** Poznávej věci ze sakristie, procvičuj si průběh mše a objevuj liturgický rok. Pro děti přibližně do 12 let, doma i na ministrantské schůzce.
 
-## Lokální spuštění
+## Zahraj si
 
-Potřebuješ Node.js 22.12 nebo novější (doporučeno Node 22 LTS) a npm.
+**[Spustit miniHry → mrazekv.github.io/minihry](https://mrazekv.github.io/minihry/)**
 
-```sh
-npm ci
-npm run dev
-```
+Stačí otevřít odkaz v prohlížeči na mobilu, tabletu nebo počítači. Bez přihlašování, reklam a sledování. Všechny hry jsou dostupné hned; vybereš si hru, obtížnost a můžeš začít.
 
-Otevři adresu vypsanou Vite, obvykle http://127.0.0.1:5173/. Pro kontrolu skutečného offline režimu použij produkční sestavení:
+## Co si můžeš zahrát
 
-```sh
-npm run build
-npm run preview
-```
+| Hra | Co tě čeká |
+| --- | --- |
+| **Pexeso ze sakristie** | Hledej dvojice obrázků nebo spoj obrázek s názvem. Vyber si 4, 6 nebo 10 dvojic. |
+| **Co je to?** | Poznej předmět podle kresby nebo najdi obrázek k jeho názvu. Tři obtížnosti a deset otázek v každém kole. |
+| **Jak jde mše za sebou?** | Seřaď části mše přetahováním nebo šipkami. Od čtyř hlavních částí až po podrobnější průběh. |
+| **Cesta liturgickým rokem** | Poskládej období nebo významné svátky a slavnosti. Tři úrovně s liturgickými barvami. |
+| **Latina po kapkách** | Spoj známá latinská slovíčka a výrazy s českým významem. |
+| **Cesta ke kostelu** | Přeskakuj kaluže a dojdi až ke kostelu. Skákej klepnutím, mezerníkem nebo šipkou nahoru. |
 
-## Hry
+V **obrázkovém slovníčku** najdeš 26 předmětů s kresbou a krátkým vysvětlením. Můžeš si je nejdřív prohlédnout a potom vyzkoušet ve hrách.
 
-- Pexeso: 4, 6 nebo 10 dvojic; dva obrázky, nebo obrázek a název.
-- Poznávačka: 10 otázek, tři obtížnosti, obrázek → název i název → obrázek. Chybná odpověď umožní nový pokus.
-- Řazení mše: čtyři hlavní části, osm zastavení nebo podrobná bohoslužba slova v neděli. Kartičky lze přesouvat myší i dotykem za úchyt nebo dostupnými šipkami; Escape přetahování zruší.
-- Liturgický rok: tři úrovně — základní přehled, rok s velikonočním triduem a 16 významných dnů od první adventní neděle po Krista Krále. Nejvyšší úroveň obsahuje např. Zjevení a Křest Páně, Popeleční středu, Květnou neděli, Nanebevstoupení, Letnice, Nejsvětější Trojici, Boží tělo, Nanebevzetí Panny Marie a Všechny svaté. Dvě části mezidobí jsou rozlišeny. Karty používají základní liturgické barvy s textovým názvem; triduum má vícebarevné označení, protože jeho obřady nemají jednu společnou barvu.
-- Latina: 4, 6 nebo 8 dvojic podle obtížnosti.
-- Cesta ke kostelu: skákání přes kaluže, dvě rychlosti, pauza, tři pokusy. Ovládání tlačítkem, klepnutím na plátno, mezerníkem nebo šipkou nahoru. P/Escape pozastaví hru; při skrytí stránky se hra automaticky pozastaví.
+## Jak to vypadá
 
-Slovníček obsahuje 26 předmětů se společnými SVG kresbami. Vyhledávání nerozlišuje diakritiku a velikost písmen. Naučné hry nemají časový limit ani omezení počtu opakování. Obtížnost a herní režim se vybírají přímo tlačítky, bez rozbalovacích nabídek.
+**Nabídka her na počítači**
 
-## Architektura
+![Úvodní obrazovka miniHer se šesti hrami a odkazem na obrázkový slovníček](docs/screenshots/nabidka-her.png)
 
-Vue 3 + TypeScript + Vite; Vue Router používá hashové adresy (`/#/pexeso`), takže hosting nepotřebuje přesměrování.
+**Poznávačka na mobilu**
 
-```text
-src/
-  components/        společné prvky her a obrázky
-  views/             nabídka, slovníček, informace a nastavení
-  games/             samostatné minihry a fyzika běžce
-  content/           předměty, latinské výrazy, pořadí a zdroje
-  assets/            vlastní SVG sprity
-  lib/               čistá herní pravidla, fokus a offline podpora
-  storage/           lokální nastavení
-  styles/            společný vzhled a responzivita
-public/              logo, instalační ikony a PWA manifest
-scripts/             vytvoření offline cache při sestavení
-tests/               testy pravidel, obsahu, funkčnosti a validity
-```
+<img src="docs/screenshots/poznavacka-mobil.png" alt="Mobilní poznávačka s kresbou liturgického předmětu a čtyřmi odpověďmi" width="360">
 
-Pro přidání předmětu přidej záznam do `src/content/items.ts` a stejnojmenný symbol do `src/assets/items.svg`. Obrázky používají souřadnice `0 0 160 160`. Hry i slovníček čerpají ze stejného obsahu. Zdroje liturgického obsahu jsou v `src/content/sources.ts` a na stránce O aplikaci.
+## Vlastním tempem, i bez připojení
 
-## Ověření
+Naučné hry nemají časový limit. Když se spleteš, můžeš to zkusit znovu. Obsahují několik obtížností a hraní lze opakovat bez omezení. Skákací hru můžeš kdykoliv pozastavit.
 
-```sh
-npm test
-npm run typecheck
-npm run build
-```
+Po prvním úplném načtení lze na podporovaných prohlížečích hrát i bez internetu. Připravenost oznámí text **„Připraveno na hraní offline“** v patičce. Aplikaci si také můžeš přidat na plochu zařízení, pokud to prohlížeč nabízí.
 
-Browser testy potřebují běžící `npm run preview` a lokální Google Chrome. Nepotřebují instalaci Playwrightu ani další služby.
+V informacích o aplikaci můžeš omezit animace a obnovit nastavení. Nastavení zůstává pouze v daném zařízení; odpovědi ani historie hraní se neukládají.
 
-```sh
-npm run test:browser
-npm run test:validity
-npm run test:pwa
-```
+## Nápady a zdrojový kód
 
-`CHROME_BIN` může určit jinou cestu k Chrome/Chromiu (výchozí `/usr/bin/google-chrome`). `TEST_BASE_URL` nastavuje adresu produkčního serveru; výchozí je http://127.0.0.1:4173/. Testy ověřují dokončení a restart všech her, chybné odpovědi, mobilní varianty, slovníček, offline načtení, klávesnicovou navigaci, dostupná jména ovladačů a rozložení při šířkách 320–1280 px. Browser testy běží s izolovaným dočasným profilem, který po dokončení smažou. `test:pwa` si sám spustí dočasný server s kopií `dist/`; ověřuje první instalaci, skutečný přechod mezi verzemi, ochranu rozehrané hry a offline načtení pod `/minihry/`.
+S nápadem na další hru nebo vylepšení může přijít kdokoliv. **[Napiš ho do GitHub Issues](https://github.com/mrazekv/minihry/issues)**; stejným způsobem můžeš nahlásit chybu.
 
-## GitHub Pages
+[Zdrojový kód je dostupný na GitHubu](https://github.com/mrazekv/minihry). miniHry vznikly s pomocí AI asistenta **Codex od OpenAI**. Logo je od ministrantů brněnské diecéze, kresby předmětů jsou vlastní SVG ilustrace.
 
-Připravený workflow `.github/workflows/pages.yml` po pushi do `main` spustí testy, vytvoří aplikaci a publikuje **pouze `dist/`**. V repozitáři nastav **Settings → Pages → Source → GitHub Actions**. Workflow používá cestu `/<název-repozitáře>/`; pro repozitář typu `uzivatel.github.io` uprav `VITE_BASE_PATH` na `/`.
-
-Pro samostatné ruční sestavení s pevnou cestou:
-
-```sh
-VITE_BASE_PATH=/minihry/ npm run build
-```
-
-Na vlastní hosting stačí nahrát obsah `dist/`. Bez nastavení `VITE_BASE_PATH` se používají relativní cesty a sestavení lze umístit do podadresáře. Pro offline režim a instalaci PWA musí být web na HTTPS (nebo localhost při vývoji).
-
-## Offline a aktualizace
-
-Produkční sestavení generuje `sw.js` s verzovaným seznamem všech místních souborů. První návštěva potřebuje připojení; připravenost potvrzuje text „Připraveno na hraní offline“ v patičce. Potom fungují offline všechny hry, slovníček i obrázky. Odkazy na zdroje na stránce O aplikaci připojení potřebují. Kořenová adresa aplikace a `index.html` používají stejnou položku cache, i při běžném požadavku `fetch`. Chybějící položky se za připojení obnovují; při výpadku sítě a neúplné cache se vrací chybová odpověď 503 s instrukcí pro opětovné načtení, nikoliv odmítnutý FetchEvent.
-
-Nová verze čeká na potvrzení tlačítkem „Aktualizovat“, dostupným mimo hry, aby se nepřerušilo rozehrané kolo. Mazání starých cache se omezuje na cache této aplikace v jejím rozsahu URL. Při lokálním vývoji se service worker neregistruje; po předchozím testování produkční verze na stejném portu může být nutné starou registraci odstranit přes DevTools → Application → Service Workers.
-
-## Soukromí a další rozvoj
-
-V `localStorage` je pouze nastavení obtížnosti poznávačky a omezení animací, nikoliv odpovědi nebo historie her. Nedostupné úložiště neblokuje hraní. Veškeré fonty, kresby a logo se načítají lokálně. Web nepotřebuje API klíče ani proměnné s tajnými údaji.
-
-Android balíček zatím není součástí projektu. Později lze produkční web přidat do projektu Capacitoru a využít stejné herní moduly. Současné soubory nejsou nikam publikovány samotným lokálním sestavením.
+Pokyny pro lokální spuštění, testování, architekturu a nasazení najdeš v **[dokumentaci pro vývojáře](docs/VYVOJ.md)**.
