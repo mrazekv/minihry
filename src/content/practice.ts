@@ -47,8 +47,8 @@ export const churchPlaces = [
   { id: 'presiders-chair', name: 'Sedes', x: 77, y: 22, clue: 'Hledej sedadlo kněze, který vede bohoslužbu.' },
   { id: 'altar', name: 'Oltář', x: 50, y: 38, clue: 'Hledej stůl pro slavení eucharistie uprostřed presbytáře.' },
   { id: 'ambo', name: 'Ambon', x: 20, y: 40, clue: 'Hledej místo, ze kterého se čte Boží slovo.' },
-  { id: 'credence-table', name: 'Abak', x: 83, y: 43, clue: 'Hledej menší stolek s připravenými konvičkami.' },
-  { id: 'baptismal-font', name: 'Křtitelnice', x: 20, y: 80, clue: 'Hledej nádobu s vodou určenou ke křtu.' },
+  { id: 'credence-table', name: 'Abak', x: 23, y: 22, clue: 'Hledej menší stolek s připravenými konvičkami.' },
+  { id: 'baptismal-font', name: 'Křtitelnice', x: 85, y: 51, clue: 'Hledej nádobu s vodou určenou ke křtu.' },
 ] as const
 
 export const handTowel = { id: 'hand-towel', name: 'Ručník na ruce' }

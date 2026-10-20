@@ -57,12 +57,12 @@ export async function launchChrome() {
         socket.close()
         browser.kill('SIGTERM')
         await new Promise(resolve => browser.once('exit', resolve))
-        await rm(profile, { recursive: true, force: true })
+        await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 })
       },
     }
   } catch (error) {
     browser.kill('SIGTERM')
-    await rm(profile, { recursive: true, force: true })
+    await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 })
     throw error
   }
 }
