@@ -23,24 +23,25 @@ export async function playYear(browser,base,level=0,mode='circle',touch=false){
   assert.equal(await ev('document.querySelectorAll(".order-list").length'),0,'year no longer uses vertical sorting')
   if(mode==='circle'){
     assert.equal(await ev('document.querySelectorAll(".year-slot").length'),steps.length)
-    assert.equal(await ev('document.querySelectorAll(".year-slot[data-filled-id]").length'),1,'Advent is fixed at start')
     for(let round=0;round<steps.length-1;round++){
-      const id=await ev('document.querySelector(".year-token").dataset.stepId')
-      const index=steps.findIndex(step=>step.id===id)
+      const index=round+1,id=steps[index].id
       const selector=`.year-slot[data-slot-index="${index}"]`
+      const choice=`.year-circle-choice[data-step-id="${id}"]`
+      assert.deepEqual(await ev('Array.from(document.querySelectorAll(".year-slot[data-filled-id]")).map(e=>e.dataset.filledId)'),steps.slice(0,index).map(step=>step.id),'circle advances in calendar order')
+      assert.equal(await ev('document.querySelector(".year-slot[aria-current=step]").dataset.slotIndex'),String(index),'only the next place is active')
+      assert.equal(await ev('document.querySelectorAll(".year-slot:not(:disabled)").length'),1,'no guessing of other positions')
       if(round===0){
         await click('.year-hint')
-        assert.equal(await ev('document.querySelector("#year-hint").textContent.includes("místo '+(index+1)+'")'),true)
-        const wrong=await ev(`Array.from(document.querySelectorAll('.year-slot')).find(e=>!e.disabled&&e.dataset.slotIndex!==${JSON.stringify(String(index))}).dataset.slotIndex`)
-        await click(`.year-slot[data-slot-index="${wrong}"]`)
-        assert.equal(await ev('!!document.querySelector(".year-slot-wrong")'),true)
-        // Test the actual pointer path, including cancelling a drop outside the ring.
-        await ev('document.querySelector(".year-ring").scrollIntoView({block:"center"})');await sleep(40)
-        const points=await ev(`(()=>{const a=document.querySelector('.year-token').getBoundingClientRect(),z=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return{a:{x:a.x+a.width/2,y:a.y+a.height/2},z:{x:z.x+z.width/2,y:z.y+z.height/2}}})()`)
+        assert.equal(await ev('document.querySelector("#year-hint").textContent.includes("Navazujeme")'),true)
+        await click(`.year-circle-choice:not([data-step-id="${id}"])`)
+        assert.equal(await ev('!!document.querySelector(".year-answer-wrong")'),true)
+        // Move the selected candidate to the one highlighted target, or cancel outside.
+        await ev('scrollTo(0,document.querySelector(".year-ring").getBoundingClientRect().top+scrollY-100)');await sleep(40)
+        const points=await ev(`(()=>{const a=document.querySelector(${JSON.stringify(choice)}).getBoundingClientRect(),z=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return{a:{x:a.x+a.width/2,y:a.y+a.height/2},z:{x:z.x+z.width/2,y:z.y+z.height/2}}})()`)
         const mouse=(type,p,buttons)=>browser.send('Input.dispatchMouseEvent',{type,...p,button:type==='mouseMoved'?'none':'left',buttons,clickCount:1})
         const finger=(type,p)=>browser.send('Input.dispatchTouchEvent',{type,touchPoints:p?[{...p,id:1}]:[]})
         for(const outside of [true,false]){
-          const end=outside?{x:2,y:Math.max(40,points.a.y)}:points.z
+          const end=outside?{x:2,y:Math.max(80,points.a.y)}:points.z
           if(touch)await finger('touchStart',points.a);else{await mouse('mouseMoved',points.a,0);await mouse('mousePressed',points.a,1)}
           for(let i=1;i<=6;i++){
             const p={x:points.a.x+(end.x-points.a.x)*i/6,y:points.a.y+(end.y-points.a.y)*i/6}
@@ -53,10 +54,10 @@ export async function playYear(browser,base,level=0,mode='circle',touch=false){
           assert.equal(await ev('!!document.querySelector(".year-ghost")'),false)
         }
       }else if(round===1){
-        await ev(`document.querySelector(${JSON.stringify(selector)}).focus()`)
+        await ev(`document.querySelector(${JSON.stringify(choice)}).focus()`)
         await browser.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,text:'\r',unmodifiedText:'\r'})
         await browser.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await sleep(30)
-      }else await click(selector)
+      }else await click(choice)
       assert.equal(await ev(`document.querySelector(${JSON.stringify(selector)}).dataset.filledId`),id)
       assert.equal(await ev('!!document.querySelector(".game-message.success")'),true)
       assert.equal(await ev('document.documentElement.scrollWidth>innerWidth+1'),false)

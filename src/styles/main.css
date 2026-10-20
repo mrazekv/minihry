@@ -124,3 +124,11 @@
 .year-answer small{font-size:.65rem;color:var(--season-accent)}
 .year-answer:disabled{opacity:1}.year-answer-correct{outline:3px solid #77946a;outline-offset:1px}.year-answer-wrong{border-style:dashed}
 @media(max-width:620px){.year-game .question-title{font-size:1.2rem}.year-ring{margin:8px auto}.year-direction,.year-scale-note{font-size:.65rem}.year-placed li{font-size:.65rem;padding:7px}.year-center>.eyebrow{font-size:.5rem}.year-token{padding:5px 4px;gap:4px}.year-token svg{width:34px;height:34px}.year-token strong{font-size:.75rem}.year-token small{font-size:.55rem}}
+.year-slot-active{outline:3px solid var(--orange);outline-offset:3px;box-shadow:0 0 0 7px #fff9}
+.year-current{cursor:default;touch-action:auto;user-select:auto}
+.year-circle-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px auto}
+.year-circle-choice{align-items:center;justify-content:center;text-align:center;padding:10px 6px;font-size:.75rem;touch-action:none;user-select:none;cursor:grab;min-width:0}
+.year-circle-choice:active{cursor:grabbing}
+.year-circle-choice>svg{width:38px;height:38px;flex-shrink:0}
+.year-circle-choice>span{max-width:100%;overflow-wrap:anywhere}
+.year-circle-choice small{font-size:.6rem;overflow-wrap:anywhere}
