@@ -1,0 +1,4 @@
+Logo Ministranti brněnské diecéze
+Grafika dodaná uživatelem pro vizuální návrh; uložena beze změny.
+Zdroj: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9TUXvhjrwBAt29L2Q1zOFl86HXqMtBN5M1Uy3GZJZDI_cw2HVE7nBfsRD&s=10
+Bílé okraje se skrývají pouze pomocí CSS.

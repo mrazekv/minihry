@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "miniHry — Malé hry pro ministranty",
+  "short_name": "miniHry",
+  "lang": "cs",
+  "description": "Malé hry pro ministranty. Bez reklam a bez účtu.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5ee",
+  "theme_color": "#315f4e",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
