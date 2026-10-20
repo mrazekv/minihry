@@ -9,6 +9,9 @@ import RecognitionGame from './games/recognition/RecognitionGame.vue'
 import OrderingGame from './games/ordering/OrderingGame.vue'
 import MatchingGame from './games/matching/MatchingGame.vue'
 import RunnerGame from './games/runner/RunnerGame.vue'
+import PreparationGame from './games/preparation/PreparationGame.vue'
+import OddOneGame from './games/odd-one/OddOneGame.vue'
+import ChurchGame from './games/church/ChurchGame.vue'
 import './styles/main.css'
 const router = createRouter({
   history: createWebHashHistory(),
@@ -22,6 +25,9 @@ const router = createRouter({
     { path: '/rok', component: OrderingGame, props: { kind: 'year' } },
     { path: '/latina', component: MatchingGame },
     { path: '/cesta', component: RunnerGame },
+    { path: '/sakristie', component: PreparationGame },
+    { path: '/vetrelec', component: OddOneGame },
+    { path: '/kostel', component: ChurchGame },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior: () => ({ top: 0 }),

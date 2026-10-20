@@ -14,18 +14,21 @@ Stačí otevřít odkaz v prohlížeči na mobilu, tabletu nebo počítači. Bez
 | --- | --- |
 | **Pexeso ze sakristie** | Hledej dvojice obrázků nebo spoj obrázek s názvem. Vyber si 4, 6 nebo 10 dvojic. |
 | **Co je to?** | Poznej předmět podle kresby nebo najdi obrázek k jeho názvu. Tři obtížnosti a deset otázek v každém kole. |
+| **Připrav sakristii** | Vyber a nachystej věci k ministrantské službě. Dvě obtížnosti s pěti nebo osmi úkoly. |
+| **Co sem nepatří?** | Najdi jednoho vetřelce ve čtveřici obrázků a zjisti, co spojuje ostatní. |
+| **Najdi místo v kostele** | Najdi šest míst v obrázkovém plánku. Klepni na místo nebo na něj přetáhni název. |
 | **Jak jde mše za sebou?** | Seřaď části mše přetahováním nebo šipkami. Od čtyř hlavních částí až po podrobnější průběh. |
 | **Cesta liturgickým rokem** | Poskládej období nebo významné svátky a slavnosti. Tři úrovně s liturgickými barvami. |
 | **Latina po kapkách** | Spoj známá latinská slovíčka a výrazy s českým významem. |
 | **Cesta ke kostelu** | Přeskakuj kaluže a dojdi až ke kostelu. Skákej klepnutím, mezerníkem nebo šipkou nahoru. |
 
-V **obrázkovém slovníčku** najdeš 35 předmětů s kresbou a krátkým vysvětlením. Můžeš si je nejdřív prohlédnout a potom vyzkoušet ve hrách.
+V **obrázkovém slovníčku** najdeš 40 předmětů s kresbou a krátkým vysvětlením. Můžeš si je nejdřív prohlédnout a potom vyzkoušet ve hrách.
 
 ## Jak to vypadá
 
 **Nabídka her na počítači**
 
-![Úvodní obrazovka miniHer se šesti hrami a odkazem na obrázkový slovníček](docs/screenshots/nabidka-her.png)
+![Úvodní obrazovka miniHer s devíti hrami a odkazem na obrázkový slovníček](docs/screenshots/nabidka-her.png)
 
 **Poznávačka na mobilu**
 

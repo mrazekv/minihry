@@ -51,9 +51,12 @@ Browser testy potřebují běžící `npm run preview` a lokální Google Chrome
 
 ```sh
 npm run test:browser
+npm run test:practice
 npm run test:validity
 npm run test:pwa
 ```
+
+`test:practice` projde obě obtížnosti tří obrázkových her: přípravu sakristie, hledání vetřelce a plánek kostela. Ověřuje opravy odpovědí, dokončení, restart, ovládání klávesnicí, přetahování myší i dotykem včetně zrušení a spuštění offline.
 
 `CHROME_BIN` může určit jinou cestu k Chrome/Chromiu (výchozí `/usr/bin/google-chrome`). `TEST_BASE_URL` nastavuje adresu produkčního serveru; výchozí je http://127.0.0.1:4173/. Testy ověřují dokončení a restart všech her, chybné odpovědi, mobilní varianty, slovníček, offline načtení, klávesnicovou navigaci, dostupná jména ovladačů a rozložení při šířkách 320–1280 px. Browser testy běží s izolovaným dočasným profilem, který po dokončení smažou. `test:pwa` si sám spustí dočasný server s kopií `dist/`; ověřuje první instalaci, skutečný přechod mezi verzemi, ochranu rozehrané hry a offline načtení pod `/minihry/`.
 

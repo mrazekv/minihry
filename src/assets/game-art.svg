@@ -23,4 +23,29 @@
 <symbol id="year-art" viewBox="0 0 220 130"><g transform="translate(110 65) rotate(-90)" fill="none" stroke-width="18"><circle r="39" stroke="#e4d6ac"/><circle r="39" stroke="#9b81a9" stroke-dasharray="35 245"/><circle r="39" stroke="#fff9e5" stroke-dasharray="29 245" stroke-dashoffset="-40"/><circle r="39" stroke="#81996c" stroke-dasharray="29 245" stroke-dashoffset="-74"/><circle r="39" stroke="#9b81a9" stroke-dasharray="29 245" stroke-dashoffset="-108"/><circle r="39" stroke="#fff9e5" stroke-dasharray="29 245" stroke-dashoffset="-142"/><circle r="39" stroke="#81996c" stroke-dasharray="64 245" stroke-dashoffset="-176"/></g><path d="M110 50v30m-10-20h20" stroke="#bba15f" stroke-width="3" stroke-linecap="round"/><path d="m177 37 2-6 2 6 6 2-6 2-2 6-2-6-6-2Z" fill="#ccb568"/></symbol>
 <symbol id="latin-art" viewBox="0 0 220 130"><path d="M41 35h76a9 9 0 0 1 9 9v33a9 9 0 0 1-9 9H70L52 99V86H41a9 9 0 0 1-9-9V44a9 9 0 0 1 9-9Z" fill="#fff9ed" stroke="#cc9d8d" stroke-width="1.5"/><path d="M134 55h45a8 8 0 0 1 8 8v27a8 8 0 0 1-8 8h-8v11l-15-11h-22a8 8 0 0 1-8-8V63a8 8 0 0 1 8-8Z" fill="#c98470"/><text x="79" y="67" font-family="Georgia,serif" font-size="21" text-anchor="middle" fill="#a96652">Pax</text><text x="157" y="83" font-family="Georgia,serif" font-size="19" text-anchor="middle" fill="#fff7e5">Pokoj</text><path d="m150 29 2-6 2 6 6 2-6 2-2 6-2-6-6-2Z" fill="#d19a80"/></symbol>
 <symbol id="runner-art" viewBox="0 0 220 130"><path d="M21 105q60-16 101-4 39-17 78-3" fill="none" stroke="#a9bdb3" stroke-width="2"/><ellipse cx="91" cy="106" rx="25" ry="4" fill="#c7d5c9"/><ellipse cx="143" cy="106" rx="20" ry="5" fill="#8bb9bd"/><g stroke="#6c6654" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m86 80-11 14m24-13 10 10m-32-37-9 9m32-14 9 6" fill="none" stroke-width="4"/><path d="m80 48-9 39 33 2-9-41" fill="#252525" stroke="#252525"/><path d="m80 48-9 5-5 10 8 5 3-5-2 6 25 1-2-10 7 3 5-8-15-5Z" fill="#fff9e7"/><circle cx="65" cy="66" r="3" fill="#e5ba8e"/><circle cx="112" cy="57" r="3" fill="#e5ba8e"/><path d="M80 48q7 7 15 2l-1 6q-7 4-13-2Z" fill="#252525" stroke="#252525" stroke-width="1"/><circle cx="87" cy="35" r="12" fill="#e5ba8e"/><path d="M75 34q-3-18 14-15 12 2 10 15l-6-7-8 2-6-1" fill="#785b43"/><path d="M167 82V42h20v40m-25-40 15-16 15 16Z" fill="#f5e2be"/><path d="M177 27v-9m-4 3h8" fill="none"/><path d="M174 82V70q4-7 8 0v12" fill="#ad8561"/></g><path d="m43 39 3-7 3 7 8 2-8 3-3 7-3-7-7-3Z" fill="#e1b663"/></symbol>
+<symbol id="preparation-art" viewBox="0 0 220 130">
+  <g stroke="#8d7959" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M37 75h147v10H37Z" fill="#d0ad79"/><path d="M46 85h9v34h-9Zm119 0h9v34h-9Z" fill="#b18b5b"/>
+    <path d="m37 75 14-10h147l-14 10Z" fill="#e6cc9b"/>
+    <rect x="123" y="37" width="48" height="29" rx="5" fill="#fff8e7"/>
+    <path d="m135 50 7 7 16-19" fill="none" stroke="#7e986d" stroke-width="3"/>
+    <use href="#game-chalice" x="53" y="6" width="70" height="75"/>
+    <path d="m95 98 8 7 15-14" fill="none" stroke="#7e986d" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</symbol>
+<symbol id="odd-art" viewBox="0 0 220 130">
+  <g fill="#fff9eb" stroke="#a2b090" stroke-width="1.5"><rect x="40" y="20" width="57" height="44" rx="7"/><rect x="108" y="20" width="57" height="44" rx="7"/><rect x="40" y="74" width="57" height="44" rx="7"/></g>
+  <g fill="#9bae87"><path d="m68 29 12 14-12 14-12-14Zm68 0 12 14-12 14-12-14ZM68 82l12 14-12 14-12-14Z"/></g>
+  <rect x="108" y="74" width="57" height="44" rx="7" fill="#e6be91" stroke="#bb8e64" stroke-width="1.5"/>
+  <circle cx="136" cy="96" r="12" fill="#fff5dc"/>
+  <path d="m184 75 3-8 3 8 8 3-8 3-3 8-3-8-8-3Z" fill="#b08b5a"/>
+</symbol>
+<symbol id="church-art" viewBox="0 0 220 130">
+  <path d="M59 115V40Q59 14 89 14h43q30 0 30 26v75Z" fill="#fff7e4" stroke="#a0b2a6" stroke-width="2"/>
+  <path d="M66 49q0-27 25-27h39q25 0 25 27v15H66Z" fill="#c6d7c3"/>
+  <g fill="#c7ac7f"><rect x="78" y="75" width="20" height="8" rx="2"/><rect x="78" y="91" width="20" height="8" rx="2"/><rect x="123" y="75" width="20" height="8" rx="2"/><rect x="123" y="91" width="20" height="8" rx="2"/></g>
+  <rect x="97" y="46" width="27" height="12" rx="2" fill="#f9edce" stroke="#ac9b7a"/>
+  <path d="M110 27v12m-4-8h8" stroke="#9a8554" stroke-width="2"/>
+  <path d="M175 73q-16-25-16-34a16 16 0 0 1 32 0q0 9-16 34Z" fill="#ba7f66" stroke="#99654f" stroke-width="1.5"/><circle cx="175" cy="39" r="6" fill="#fff4dd"/>
+</symbol>
 </svg>

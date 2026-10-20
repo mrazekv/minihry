@@ -11,6 +11,7 @@ export const items: LiturgicalItem[] = [
     "id": "chalice",
     "name": "Kalich",
     "description": "Nádoba pro víno, které se při mši stává Kristovou krví.",
+    "note": "Při přípravě darů se do vína v kalichu přidává také trocha vody.",
     "level": 1
   },
   {
@@ -23,6 +24,7 @@ export const items: LiturgicalItem[] = [
     "id": "chasuble",
     "name": "Ornát",
     "description": "Vrchní liturgické roucho kněze při mši.",
+    "note": "Barva ornátu napovídá, jaké období nebo svátek slavíme: v adventu bývá fialový, o Vánocích bílý.",
     "level": 1
   },
   {
@@ -41,18 +43,21 @@ export const items: LiturgicalItem[] = [
     "id": "missal",
     "name": "Misál",
     "description": "Kniha modliteb a pokynů pro slavení mše.",
+    "note": "Barevné záložky pomáhají rychle najít správnou modlitbu. Před mší je dobré připravit je s knězem.",
     "level": 1
   },
   {
     "id": "veil",
     "name": "Kalichové velum",
     "description": "Látková pokrývka kalicha.",
+    "note": "Kalichové velum může být vždy bílé, i když má ornát jinou liturgickou barvu.",
     "level": 2
   },
   {
     "id": "thurible",
     "name": "Kadidelnice",
     "description": "Nádoba na žhavé uhlíky a kadidlo.",
+    "note": "Stoupající dým kadidla je znamením modlitby, která se obrací k Bohu.",
     "level": 2
   },
   {
@@ -71,6 +76,7 @@ export const items: LiturgicalItem[] = [
     "id": "cruets",
     "name": "Konvičky",
     "description": "Přináší se v nich víno a voda.",
+    "note": "Při přípravě darů podává ministrant nejprve konvičku s vínem a potom s vodou.",
     "level": 1
   },
   {
@@ -83,42 +89,49 @@ export const items: LiturgicalItem[] = [
     "id": "cross",
     "name": "Kříž",
     "description": "Připomíná Ježíšovu smrt a jeho lásku k nám.",
+    "note": "V průvodu může ministrant nést kříž na dlouhé tyči. Tehdy mu říkáme procesní kříž.",
     "level": 1
   },
   {
     "id": "alb",
     "name": "Alba",
     "description": "Dlouhé bílé liturgické roucho.",
+    "note": "Albu mohou při bohoslužbě nosit kněží, jáhni i ministranti.",
     "level": 1
   },
   {
     "id": "stole",
     "name": "Štóla",
     "description": "Pruh látky, znamení služby kněze nebo jáhna.",
+    "note": "Kněz ji nosí kolem krku, jáhen šikmo z levého ramene k pravému boku.",
     "level": 2
   },
   {
     "id": "cincture",
     "name": "Cingulum",
     "description": "Provazový pás k přepásání alby.",
+    "note": "Pokud alba dobře přiléhá sama o sobě, cingulum není potřeba.",
     "level": 2
   },
   {
     "id": "boat",
     "name": "Loďka",
     "description": "Nádobka na kadidlo se lžičkou.",
+    "note": "Loďka se knězi podává otevřená, aby mohl pohodlně nabrat kadidlo.",
     "level": 2
   },
   {
     "id": "lavabo",
     "name": "Lavabo",
     "description": "Konvička a miska k umytí rukou kněze.",
+    "note": "K lavabu patří také ručník. Jeden ministrant lije vodu na ruce kněze a druhý nabídne ručník.",
     "level": 2
   },
   {
     "id": "purificator",
     "name": "Purifikatorium",
     "description": "Bílá plátěná utěrka k otírání a čištění kalicha po přijímání.",
+    "note": "Purifikatoriem se po přijímání obvykle otírá také patena.",
     "level": 3
   },
   {
@@ -131,6 +144,7 @@ export const items: LiturgicalItem[] = [
     "id": "cope",
     "name": "Pluviál",
     "description": "Slavnostní liturgický plášť.",
+    "note": "Pluviál se používá také při liturgických průvodech.",
     "level": 3
   },
   {
@@ -155,24 +169,28 @@ export const items: LiturgicalItem[] = [
     "id": "tabernacle",
     "name": "Svatostánek",
     "description": "Místo, kde se uchovává eucharistie.",
+    "note": "Světlo u svatostánku připomíná, že je v něm přítomný Kristus v eucharistii.",
     "level": 2
   },
   {
     "id": "lectionary",
     "name": "Lekcionář",
     "description": "Kniha biblických čtení pro bohoslužbu.",
+    "note": "Evangeliář je jiná kniha: obsahuje jen evangelia, kdežto lekcionář i ostatní biblická čtení.",
     "level": 2
   },
   {
     "id": "ambo",
     "name": "Ambon",
     "description": "Místo, odkud při bohoslužbě zaznívají biblická čtení a evangelium.",
+    "note": "Z ambonu se přednáší také žalm. Patří k bohoslužbě slova stejně jako čtení.",
     "level": 1
   },
   {
     "id": "altar",
     "name": "Oltář",
     "description": "Stůl, na kterém se při mši slaví eucharistie.",
+    "note": "Kněz na začátku a na konci mše uctívá oltář políbením.",
     "level": 1
   },
   {
@@ -198,6 +216,7 @@ export const items: LiturgicalItem[] = [
     "id": "mitre",
     "name": "Mitra",
     "description": "Slavnostní pokrývka hlavy biskupa se dvěma špičkami a dvěma stuhami vzadu.",
+    "note": "Když se biskup modlí, mitru odkládá.",
     "level": 2
   },
   {
@@ -210,6 +229,7 @@ export const items: LiturgicalItem[] = [
     "id": "rochet",
     "name": "Rocheta",
     "description": "Krátké bílé roucho s rukávy, které se obléká přes spodní oděv.",
+    "note": "Na obrázcích si všimni délky: rocheta je krátká, zatímco alba sahá až ke kotníkům.",
     "level": 2
   },
   {
@@ -217,5 +237,39 @@ export const items: LiturgicalItem[] = [
     "name": "Komže a límec",
     "description": "Černá ministrantská sukně a černý límec. Spolu s bílou rochetou tvoří ministrantské oblečení.",
     "level": 1
+  },
+  {
+    "id": "paschal-candle",
+    "name": "Paškál",
+    "description": "Velká velikonoční svíce s křížem, letopočtem a písmeny Α a Ω. Připomíná vzkříšeného Ježíše, světlo světa.",
+    "note": "Α (alfa) a Ω (omega) jsou první a poslední písmeno řecké abecedy. Připomínají, že Kristus je začátek i konec.",
+    "level": 2
+  },
+  {
+    "id": "dalmatic",
+    "name": "Dalmatika",
+    "description": "Vrchní liturgické roucho jáhna. Od ornátu ji poznáš podle výrazných rukávů.",
+    "note": "Jáhen si dalmatiku obléká přes albu a štólu.",
+    "level": 3
+  },
+  {
+    "id": "baptismal-font",
+    "name": "Křtitelnice",
+    "description": "Nádoba s vodou určená ke křtu. Křtem začíná křesťanský život.",
+    "note": "Některé křtitelnice mají tekoucí vodu jako pramen. Připomíná nový život, který člověk dostává ve křtu.",
+    "level": 1
+  },
+  {
+    "id": "presiders-chair",
+    "name": "Sedes",
+    "description": "Sedadlo kněze, který předsedá bohoslužbě a vede společnou modlitbu.",
+    "level": 2
+  },
+  {
+    "id": "credence-table",
+    "name": "Abak (abakus)",
+    "description": "Přípravný stolek poblíž oltáře. Ministranti na něm mají nachystané nádoby a další věci potřebné ke mši.",
+    "note": "Před mší si na abaku zkontroluj, že jsou konvičky i další potřebné věci připravené. Při službě je pak snadno najdeš.",
+    "level": 2
   }
 ]

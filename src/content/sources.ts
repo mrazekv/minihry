@@ -1,5 +1,9 @@
 /** Zdroje ověřené při přípravě obsahu 20. 10. 2026. Výklady jsou stručné parafráze. */
 export const sources: { title: string; url: string }[] = [
+  { title: 'Příprava darů — služba ministrantů a abak', url: 'https://www.liturgie.cz/temata/mse-svata/priprava-daru/prakticke-informace' },
+  { title: 'Velikonoční vigilie — paškál a jeho symboly', url: 'https://m.liturgie.cz/misal/04triduum/04vigilie_1.htm' },
+  { title: 'Křtitelnice — místo slavení křtu', url: 'https://www.liturgie.cz/temata/liturgicky-prostor/liturgicka-mista/krtitelnice' },
+  { title: 'Sedadlo pro předsedajícího kněze', url: 'https://www.liturgie.cz/temata/liturgicky-prostor/liturgicka-mista/biskupska-katedra-a-sedadlo-pro-predsedajiciho-kneze' },
   { title: 'Ambon — místo hlásání Božího slova', url: 'https://www.liturgie.cz/temata/liturgicky-prostor/liturgicka-mista/ambon' },
   { title: 'Biskupské oblečení a jeho symbolika — Diecéze Columbus (anglicky)', url: 'https://catholictimescolumbus.org/news/bishop-s-clothing-displays-tradition-symbolism/' },
   { title: 'Solideo a jeho barvy — Catholic Encyclopedia (anglicky)', url: 'https://www.newadvent.org/cathen/15765b.htm' },
