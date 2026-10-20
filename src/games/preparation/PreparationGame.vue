@@ -84,12 +84,12 @@ useRoundFocus(phase, index)
     <section class="preparation-tray" :class="{ 'transfer-over': drag?.moved && drag.over === 'tray' }" data-drop-zone="tray" aria-labelledby="tray-title">
       <h3 id="tray-title">Připravené věci <small>Vyber {{ current.required.length }} věci</small></h3>
       <div v-if="selected.length" class="practice-grid tray-grid">
-        <PracticeItem v-for="id in selected" :id="id" :key="id" :name="name(id)" :selected="true" :disabled="solved" transferable :class="{ 'practice-wrong': checked && errors.extra.includes(id) }" @choose="toggle(id)" @drag="begin($event,id)" @handle="handleClick(()=>toggle(id))" />
+        <PracticeItem v-for="id in selected" :id="id" :key="id" :name="name(id)" :hide-name="!checked" :selected="true" :disabled="solved" transferable :class="{ 'practice-wrong': checked && errors.extra.includes(id) }" @choose="toggle(id)" @drag="begin($event,id)" @handle="handleClick(()=>toggle(id))" />
       </div><p v-else class="tray-empty">Sem nachystej vybrané věci.</p>
     </section>
     <section class="preparation-shelf" :class="{ 'transfer-over': drag?.moved && drag.over === 'shelf' }" data-drop-zone="shelf" aria-labelledby="shelf-title">
       <h3 id="shelf-title">Polička</h3><div class="practice-grid">
-        <PracticeItem v-for="id in shelf.filter(id=>!selected.includes(id))" :id="id" :key="id" :name="name(id)" :disabled="solved" transferable @choose="toggle(id)" @drag="begin($event,id)" @handle="handleClick(()=>toggle(id))" />
+        <PracticeItem v-for="id in shelf.filter(id=>!selected.includes(id))" :id="id" :key="id" :name="name(id)" :hide-name="!checked" :disabled="solved" transferable @choose="toggle(id)" @drag="begin($event,id)" @handle="handleClick(()=>toggle(id))" />
       </div>
     </section>
     <p class="game-message" :class="{success:solved}" role="status">{{ message || 'Vyber, co je pro tento úkol potřeba.' }}</p>

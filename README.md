@@ -15,7 +15,7 @@ Stačí otevřít odkaz v prohlížeči na mobilu, tabletu nebo počítači. Bez
 | **Pexeso ze sakristie** | Hledej dvojice obrázků nebo spoj obrázek s názvem. Vyber si 4, 6 nebo 10 dvojic. |
 | **Co je to?** | Poznej předmět podle kresby nebo najdi obrázek k jeho názvu. Tři obtížnosti a deset otázek v každém kole. |
 | **Připrav sakristii** | Vyber a nachystej věci k ministrantské službě. Dvě obtížnosti s pěti nebo osmi úkoly. |
-| **Co sem nepatří?** | Najdi jednoho vetřelce ve čtveřici obrázků a zjisti, co spojuje ostatní. |
+| **Co sem nepatří?** | Objev, co spojuje tři ze čtyř obrázků. Ve výzvě zmizí i názvy; nápovědu si odkryješ na přání. |
 | **Najdi místo v kostele** | Najdi šest míst v obrázkovém plánku. Klepni na místo nebo na něj přetáhni název. |
 | **Jak jde mše za sebou?** | Seřaď části mše přetahováním nebo šipkami. Od čtyř hlavních částí až po podrobnější průběh. |
 | **Cesta liturgickým rokem** | Poskládej období nebo významné svátky a slavnosti. Tři úrovně s liturgickými barvami. |

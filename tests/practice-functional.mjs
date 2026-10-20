@@ -64,12 +64,18 @@ async function preparation(level,touch){
   for(let i=0;i<count;i++){
     const id=await ev('document.querySelector(".question-title").dataset.taskId')
     const task=preparationTasks.find(t=>t.id===id)
+    const labels=()=>ev('document.querySelectorAll(".practice-item-choice > span:not([aria-hidden])").length')
+    assert.equal(await labels(),0,'preparation starts without picture names')
     const extra=await ev(`Array.from(document.querySelectorAll('.preparation-shelf .practice-item')).map(e=>e.dataset.itemId).find(id=>!${JSON.stringify(task.required)}.includes(id))`)
     const choose=id=>click(`.practice-item[data-item-id="${id}"] .practice-item-choice`)
-    await choose(extra);await next();assert.equal(await success(),false,'extra fails')
-    await choose(extra);await choose(task.required[0]);await next();assert.equal(await success(),false,'missing fails')
+    await choose(extra);assert.equal(await labels(),0,'selection does not reveal names')
+    await next();assert.equal(await success(),false,'extra fails')
+    assert.equal(await labels(),await ev('document.querySelectorAll(".practice-item").length'),'evaluation reveals all names')
+    await choose(extra);await choose(task.required[0]);assert.equal(await labels(),0,'editing hides names again')
+    await next();assert.equal(await success(),false,'missing fails')
     for(const id of task.required.slice(1))await choose(id)
     await next();assert.equal(await success(),true);await layout('preparation active')
+    assert.equal(await labels(),await ev('document.querySelectorAll(".practice-item").length'),'correct evaluation shows names')
     assert.equal(await ev('Array.from(document.querySelectorAll(".practice-item-choice")).every(e=>e.disabled)'),true)
     await next()
   }
@@ -81,8 +87,18 @@ async function odd(level){
   for(let i=0;i<count;i++){
     const id=await ev('document.querySelector(".question-title").dataset.taskId'),task=oddTasks.find(t=>t.id===id)
     assert.equal(await ev('document.querySelectorAll(".practice-item").length'),4)
+    assert.equal(await ev('document.querySelector(".question-title").textContent'),'Co sem nepatří?','category is not revealed')
+    assert.equal(await ev('getComputedStyle(document.querySelector("#odd-hint")).display'),'none','hint starts hidden')
+    assert.equal(await ev('document.querySelectorAll(".practice-item-choice>span").length'),level===2?0:4,'challenge hides names')
+    if(i===0){
+      await click('.odd-hint-button')
+      assert.equal(await ev('document.querySelector("#odd-hint").textContent'),task.question)
+      await click('.odd-hint-button')
+      assert.equal(await ev('getComputedStyle(document.querySelector("#odd-hint")).display'),'none')
+    }
     await click(`.practice-item[data-item-id="${task.members[0]}"] button`);assert.equal(await success(),false)
     await click(`.practice-item[data-item-id="${task.odd}"] button`);assert.equal(await success(),true)
+    assert.equal(await ev('document.querySelectorAll(".practice-item-choice>span").length'),4,'solution reveals names')
     await layout('odd active');await next()
   }
   await restart();console.log(`PASS odd ${level}: all ${count} questions, corrections, result/restart`)
