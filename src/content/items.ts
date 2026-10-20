@@ -2,6 +2,7 @@ export interface LiturgicalItem {
   id: string
   name: string
   description: string
+  note?: string
   level: 1 | 2 | 3
 }
 
@@ -15,7 +16,7 @@ export const items: LiturgicalItem[] = [
   {
     "id": "paten",
     "name": "Patena",
-    "description": "Miska pro hostii při slavení mše.",
+    "description": "Plochá miska nebo talířek pro hostii při slavení mše.",
     "level": 1
   },
   {
@@ -117,7 +118,7 @@ export const items: LiturgicalItem[] = [
   {
     "id": "purificator",
     "name": "Purifikatorium",
-    "description": "Plátěná utěrka k otírání kalicha.",
+    "description": "Bílá plátěná utěrka k otírání a čištění kalicha po přijímání.",
     "level": 3
   },
   {
@@ -161,5 +162,60 @@ export const items: LiturgicalItem[] = [
     "name": "Lekcionář",
     "description": "Kniha biblických čtení pro bohoslužbu.",
     "level": 2
+  },
+  {
+    "id": "ambo",
+    "name": "Ambon",
+    "description": "Místo, odkud při bohoslužbě zaznívají biblická čtení a evangelium.",
+    "level": 1
+  },
+  {
+    "id": "altar",
+    "name": "Oltář",
+    "description": "Stůl, na kterém se při mši slaví eucharistie.",
+    "level": 1
+  },
+  {
+    "id": "communion-bowl",
+    "name": "Miska",
+    "description": "Hlubší miska na hostie, které se při mši proměňují a podávají při přijímání.",
+    "level": 2
+  },
+  {
+    "id": "cassock",
+    "name": "Klerika",
+    "description": "Dlouhý oděv duchovních s rukávy a knoflíky vpředu, obvykle černý.",
+    "level": 2
+  },
+  {
+    "id": "zucchetto",
+    "name": "Solideo",
+    "description": "Malá kulatá čepička. Biskupské solideo na obrázku je fialové.",
+    "note": "Barva napoví, kdo solideo nosí: biskup fialové, kardinál červené a papež bílé.",
+    "level": 3
+  },
+  {
+    "id": "mitre",
+    "name": "Mitra",
+    "description": "Slavnostní pokrývka hlavy biskupa se dvěma špičkami a dvěma stuhami vzadu.",
+    "level": 2
+  },
+  {
+    "id": "crozier",
+    "name": "Berla",
+    "description": "Biskupská hůl se zahnutým koncem. Připomíná, že biskup pečuje o věřící jako pastýř o své stádo.",
+    "level": 2
+  },
+  {
+    "id": "rochet",
+    "name": "Rocheta",
+    "description": "Krátké bílé roucho s rukávy, které se obléká přes spodní oděv.",
+    "level": 2
+  },
+  {
+    "id": "server-cassock-collar",
+    "name": "Komže a límec",
+    "description": "Černá ministrantská sukně a černý límec. Spolu s bílou rochetou tvoří ministrantské oblečení.",
+    "level": 1
   }
 ]

@@ -19,7 +19,7 @@ Stačí otevřít odkaz v prohlížeči na mobilu, tabletu nebo počítači. Bez
 | **Latina po kapkách** | Spoj známá latinská slovíčka a výrazy s českým významem. |
 | **Cesta ke kostelu** | Přeskakuj kaluže a dojdi až ke kostelu. Skákej klepnutím, mezerníkem nebo šipkou nahoru. |
 
-V **obrázkovém slovníčku** najdeš 26 předmětů s kresbou a krátkým vysvětlením. Můžeš si je nejdřív prohlédnout a potom vyzkoušet ve hrách.
+V **obrázkovém slovníčku** najdeš 35 předmětů s kresbou a krátkým vysvětlením. Můžeš si je nejdřív prohlédnout a potom vyzkoušet ve hrách.
 
 ## Jak to vypadá
 

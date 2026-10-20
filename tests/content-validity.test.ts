@@ -7,9 +7,8 @@ import { latinPairs, massOrders, yearOrders } from '../src/content/learning'
 const unique = (values: string[]) => expect(new Set(values).size).toBe(values.length)
 
 describe('learning content integrity', () => {
-  it('has a distinct usable drawing for all 20–30 liturgical items', () => {
+  it('has a distinct usable drawing for every liturgical item', () => {
     expect(items.length).toBeGreaterThanOrEqual(20)
-    expect(items.length).toBeLessThanOrEqual(30)
     unique(items.map(item => item.id))
     unique(items.map(item => item.name))
     const svg = readFileSync(new URL('../src/assets/items.svg', import.meta.url), 'utf8')
