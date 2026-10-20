@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Kropáč — jednoduchá vektorová kresba</title>
+  <desc id="desc">Stříbrná děrovaná koule na kovovém krčku a soustružené dřevěné rukojeti s očkem. Předmět je nakloněný šikmo doprava.</desc>
+  <g transform="rotate(35 160 160)" stroke="#655e4e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="160" cy="274" r="9" fill="none" stroke="#9c967f" stroke-width="4"/>
+    <rect x="154" y="110" width="12" height="63" rx="4" fill="#bdc9c7"/>
+    <path d="M157 119v40" fill="none" stroke="#f6fbf6" stroke-width="3"/>
+    <path d="M143 174q-6 14 0 30 5 17-1 37-5 17 11 22h14q16-5 11-22-6-20-1-37 6-16 0-30Z" fill="#b68554"/>
+    <path d="M150 185q-3 12 1 24 4 18-1 38" fill="none" stroke="#d4ad77" stroke-width="4"/>
+    <path d="M166 187q4 19 0 37m3 14 2 12" fill="none" stroke="#987048" stroke-width="1.7"/>
+    <rect x="141" y="166" width="38" height="11" rx="5" fill="#d8bb80"/>
+    <rect x="143" y="251" width="34" height="10" rx="5" fill="#a37649"/>
+    <path d="M148 169h22" stroke="#fae6b9" stroke-width="2"/>
+    <path d="M145 106q15 9 30 0l-5 15h-20Z" fill="#d8bb80"/>
+    <circle cx="160" cy="76" r="37" fill="#ced8d3"/>
+    <path d="M137 53q-13 11-10 27" fill="none" stroke="#f6faf3" stroke-width="5"/>
+    <path d="M135 99q25 20 48-1" fill="none" stroke="#afc0b7" stroke-width="5"/>
+    <path d="M124 77q36 16 72 0" fill="none" stroke="#8e9f97" stroke-width="1.8"/>
+    <g fill="#63736c" stroke="none">
+      <ellipse cx="146" cy="50" rx="3.3" ry="2.5" transform="rotate(-20 146 50)"/>
+      <ellipse cx="168" cy="48" rx="3.4" ry="2.5" transform="rotate(12 168 48)"/>
+      <circle cx="138" cy="65" r="3.5"/><circle cx="159" cy="63" r="3.8"/>
+      <circle cx="179" cy="64" r="3.3"/><ellipse cx="128" cy="80" rx="2" ry="3.3"/>
+      <circle cx="148" cy="83" r="3.5"/><circle cx="172" cy="84" r="3.5"/>
+      <ellipse cx="191" cy="79" rx="2" ry="3.3"/><circle cx="141" cy="96" r="2.7"/>
+      <circle cx="160" cy="102" r="3"/><circle cx="179" cy="97" r="2.7"/>
+    </g>
+  </g>
+</svg>
