@@ -18,7 +18,7 @@ Stačí otevřít odkaz v prohlížeči na mobilu, tabletu nebo počítači. Bez
 | **Co sem nepatří?** | Objev, co spojuje tři ze čtyř obrázků. Ve výzvě zmizí i názvy; nápovědu si odkryješ na přání. |
 | **Najdi místo v kostele** | Najdi šest míst v obrázkovém plánku. Klepni na místo nebo na něj přetáhni název. |
 | **Jak jde mše za sebou?** | Seřaď části mše přetahováním nebo šipkami. Od čtyř hlavních částí až po podrobnější průběh. |
-| **Cesta liturgickým rokem** | Doplň kartičky do kruhu nebo si zahraj „Co následuje?“. Tři úrovně od období po vybrané svátky a slavnosti, s liturgickými barvami. |
+| **Cesta liturgickým rokem** | Postupuj od adventu po kruhu a vybírej kartičky pro další zvýrazněné místo, nebo si zahraj „Co následuje?“. Tři úrovně od období po vybrané svátky a slavnosti, s liturgickými barvami. |
 | **Latina po kapkách** | Spoj známá latinská slovíčka a výrazy s českým významem. |
 | **Cesta ke kostelu** | Přeskakuj kaluže a dojdi až ke kostelu. Skákej klepnutím, mezerníkem nebo šipkou nahoru. |
 

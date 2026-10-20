@@ -64,6 +64,8 @@ npm run test:pwa
 
 `test:year` projde kruh liturgického roku a režim „Co následuje?“ na všech třech úrovních. Ověřuje oba úseky mezidobí, návrat od posledního kroku k adventu, opravy odpovědí, myš, dotyk, klávesnici, restart a offline načtení. Kruh vyjadřuje pořadí, nikoliv skutečnou délku období; třetí úroveň obsahuje vybrané svátky a slavnosti.
 
+Kruh se doplňuje postupně od adventu: aktivní je vždy jen následující místo. Hráč pro něj vybírá kartičku z nabídky klepnutím nebo přetažením, neodhaduje číselnou pozici náhodně zadané slavnosti.
+
 `CHROME_BIN` může určit jinou cestu k Chrome/Chromiu (výchozí `/usr/bin/google-chrome`). `TEST_BASE_URL` nastavuje adresu produkčního serveru; výchozí je http://127.0.0.1:4173/. Testy ověřují dokončení a restart všech her, chybné odpovědi, mobilní varianty, slovníček, offline načtení, klávesnicovou navigaci, dostupná jména ovladačů a rozložení při šířkách 320–1280 px. Browser testy běží s izolovaným dočasným profilem, který po dokončení smažou. `test:pwa` si sám spustí dočasný server s kopií `dist/`; ověřuje první instalaci, skutečný přechod mezi verzemi, ochranu rozehrané hry a offline načtení pod `/minihry/`.
 
 ## GitHub Pages
