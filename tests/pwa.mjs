@@ -14,7 +14,9 @@ const temporary = await mkdtemp(join(tmpdir(), 'minihry-pwa-'))
 const directory = join(temporary, 'dist')
 const contentTypes = { '.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.svg':'image/svg+xml', '.png':'image/png', '.jpg':'image/jpeg', '.webmanifest':'application/manifest+json' }
 let browser
+let networkUnavailable = false
 const server = createServer(async (request, response) => {
+  if (networkUnavailable) { request.socket.destroy(); return }
   try {
     const path = decodeURIComponent(new URL(request.url, 'http://localhost').pathname)
     if (!path.startsWith('/minihry/')) { response.writeHead(404).end(); return }
@@ -58,10 +60,18 @@ try {
   for(const icon of cached.manifest.icons) assert.ok(cached.urls.includes(new URL(icon.src,base).href),'Manifest icon must be available offline')
 
   await browser.evaluate('window.__pwaReloadMarker=true')
+  networkUnavailable = true
   await browser.send('Network.emulateNetworkConditions',{ offline:true,latency:0,downloadThroughput:0,uploadThroughput:0 })
+  const shellAlias = await browser.evaluate(`(async()=>{
+    const response=await fetch('./#/');
+    return { status:response.status,html:(await response.text()).includes('<div id="app">') };
+  })()`)
+  assert.equal(shellAlias.status,200,'Offline non-navigation root request uses the cached index.html')
+  assert.equal(shellAlias.html,true,'Root alias returns the application shell')
   await browser.send('Page.reload',{ ignoreCache:true })
   await until('!window.__pwaReloadMarker && document.querySelectorAll(".game-card").length===6','Root must load as a new document while offline')
   assert.equal(await browser.evaluate('Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)'),true)
+  networkUnavailable = false
   await browser.send('Network.emulateNetworkConditions',{ offline:false,latency:0,downloadThroughput:-1,uploadThroughput:-1 })
   await browser.evaluate(`document.querySelector('a[href="#/pexeso"]').click()`)
   await until('Boolean(document.querySelector(".setup-panel"))','Memory setup must load')
@@ -84,7 +94,35 @@ try {
   assert.ok(updatedNames.some(name=>!cached.names.includes(name)),'Updated worker must activate a new versioned cache')
   assert.ok(cached.names.every(name=>!updatedNames.includes(name)),'Old application cache is cleaned after activation')
   assert.deepEqual(browser.errors,[],'No browser errors during install, offline load or update')
-  console.log('PWA integration passed: subdirectory, manifest icons, first install, offline root reload, waiting update, active-game protection and explicit activation.')
+  // Simulate eviction of the shell while the SW registration remains active.
+  const repaired = await browser.evaluate(`(async()=>{
+    const name=(await caches.keys()).find(name=>name.startsWith('minihry:'));
+    const cache=await caches.open(name);
+    const shell=new URL('index.html',location.href).href;
+    await cache.delete(shell);
+    const response=await fetch('./?recovery=1',{cache:'no-store'});
+    return {status:response.status,cached:!!(await cache.match(shell))};
+  })()`)
+  assert.deepEqual(repaired,{status:200,cached:true},'Missing cached shell is repaired online through its root alias')
+  assert.deepEqual(browser.errors,[],'Cache recovery causes no browser errors')
+
+  // CDP page-offline alone does not disconnect fetches in the SW target.
+  // Disconnect the server as well to cover the GitHub Pages failure path.
+  networkUnavailable=true
+  await browser.send('Network.emulateNetworkConditions',{offline:true,latency:0,downloadThroughput:0,uploadThroughput:0})
+  const offlineResponses=await browser.evaluate(`(async()=>{
+    const root=await fetch('./#/');
+    const missing=await fetch('./assets/offline-missing.svg');
+    const name=(await caches.keys()).find(name=>name.startsWith('minihry:'));
+    await (await caches.open(name)).delete(new URL('index.html',location.href).href);
+    const empty=await fetch('./?empty-cache=1');
+    return {root:root.status,missing:missing.status,empty:empty.status,help:(await empty.text()).includes('Připoj se k internetu')};
+  })()`)
+  assert.deepEqual(offlineResponses,{root:200,missing:503,empty:503,help:true},'Offline misses return explicit responses rather than rejecting FetchEvent')
+  await browser.evaluate('window.__offlineFallbackMarker=true')
+  await browser.send('Page.reload',{ignoreCache:true})
+  await until('!window.__offlineFallbackMarker && document.querySelector("h1")?.textContent.includes("nemůžeme připojit")','Evicted offline navigation shows the recovery page instead of a browser network error')
+  console.log('PWA integration passed: subdirectory, install, real offline root fetch/reload, cache recovery, graceful missing-file/eviction responses and explicit update.')
 } finally {
   if(browser) await browser.close()
   await new Promise(resolve=>server.close(resolve))

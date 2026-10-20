@@ -82,7 +82,7 @@ Na vlastní hosting stačí nahrát obsah `dist/`. Bez nastavení `VITE_BASE_PAT
 
 ## Offline a aktualizace
 
-Produkční sestavení generuje `sw.js` s verzovaným seznamem všech místních souborů. První návštěva potřebuje připojení; připravenost potvrzuje text „Připraveno na hraní offline“ v patičce. Potom fungují offline všechny hry, slovníček i obrázky. Odkazy na zdroje na stránce O aplikaci připojení potřebují.
+Produkční sestavení generuje `sw.js` s verzovaným seznamem všech místních souborů. První návštěva potřebuje připojení; připravenost potvrzuje text „Připraveno na hraní offline“ v patičce. Potom fungují offline všechny hry, slovníček i obrázky. Odkazy na zdroje na stránce O aplikaci připojení potřebují. Kořenová adresa aplikace a `index.html` používají stejnou položku cache, i při běžném požadavku `fetch`. Chybějící položky se za připojení obnovují; při výpadku sítě a neúplné cache se vrací chybová odpověď 503 s instrukcí pro opětovné načtení, nikoliv odmítnutý FetchEvent.
 
 Nová verze čeká na potvrzení tlačítkem „Aktualizovat“, dostupným mimo hry, aby se nepřerušilo rozehrané kolo. Mazání starých cache se omezuje na cache této aplikace v jejím rozsahu URL. Při lokálním vývoji se service worker neregistruje; po předchozím testování produkční verze na stejném portu může být nutné starou registraci odstranit přes DevTools → Application → Service Workers.
 

@@ -6,7 +6,7 @@ let requestedUpdate = false
 export async function registerOffline() {
   if (!import.meta.env.PROD || !('serviceWorker' in navigator)) return
   try {
-    const registration = await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`)
+    const registration = await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`, { updateViaCache: 'none' })
     function checkWaiting() {
       // První instalace může na okamžik projít stavem waiting; aktualizaci
       // nabízíme jen pokud stránku již ovládá starší aktivní verze.
