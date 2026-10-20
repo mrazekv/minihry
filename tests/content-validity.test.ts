@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { items } from '../src/content/items'
+import { seasonColors } from '../src/content/liturgical-colors'
 import { latinPairs, massOrders, yearOrders } from '../src/content/learning'
 
 const unique = (values: string[]) => expect(new Set(values).size).toBe(values.length)
@@ -47,7 +48,7 @@ describe('learning content integrity', () => {
 
   it('preserves the two stretches of Ordinary Time around Lent and Easter', () => {
     // The two parts must remain distinct cards even though both are green.
-    for (const order of yearOrders) {
+    for (const order of yearOrders.filter(order => order.kind !== 'celebrations')) {
       const sequence = order.steps.map(step => step.id)
       expect(sequence.indexOf('ordinary-first')).toBeGreaterThan(sequence.indexOf('christmas'))
       expect(sequence.indexOf('lent')).toBeGreaterThan(sequence.indexOf('ordinary-first'))
@@ -56,4 +57,23 @@ describe('learning content integrity', () => {
       expect(sequence[0]).toBe('advent')
     }
   })
+
+  it('offers a third level with chronologically unambiguous celebrations and their own colors', () => {
+    expect(yearOrders).toHaveLength(3)
+    const celebrations = yearOrders.find(order => order.kind === 'celebrations')!
+    expect(celebrations.steps.map(step => step.id)).toEqual([
+      'advent-sunday', 'christmas-day', 'epiphany', 'baptism', 'ash-wednesday',
+      'palm-sunday', 'maundy-thursday', 'good-friday', 'easter-sunday', 'ascension',
+      'pentecost', 'trinity', 'corpus-christi', 'assumption', 'all-saints', 'christ-king',
+    ])
+    // Red exceptions must not inherit the surrounding Lent/Easter period color.
+    for (const id of ['palm-sunday', 'good-friday', 'pentecost']) expect(seasonColors[id].className).toBe('season-red')
+    for (const id of ['christmas-day', 'epiphany', 'baptism', 'maundy-thursday', 'easter-sunday', 'ascension', 'trinity', 'corpus-christi', 'assumption', 'all-saints', 'christ-king']) expect(seasonColors[id].className).toBe('season-white')
+    for (const order of yearOrders) for (const step of order.steps) {
+      expect(seasonColors[step.id], `Color for ${step.label}`).toBeDefined()
+      expect(seasonColors[step.id].label.trim()).not.toBe('')
+      expect(seasonColors[step.id].explanation.trim()).not.toBe('')
+    }
+  })
+
 })

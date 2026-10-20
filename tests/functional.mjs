@@ -87,7 +87,7 @@ async function quiz(mode = 'names', difficulty = 1) {
 
 const orderIds = async () => (await all('.order-list li[data-step-id]')).map(item => item.step)
 async function dragOrder(pointerType = 'mouse', cancel = false) {
-  await evaluate(`document.querySelector('.order-list li').scrollIntoView({block:'start'})`)
+  await evaluate(`document.querySelector('.order-list li').scrollIntoView({block:'center'})`)
   await sleep(40)
   const before = await orderIds()
   const points = await evaluate(`(()=>{const rows=[...document.querySelectorAll('.order-list li')];const a=rows[0].querySelector('.drag-handle').getBoundingClientRect();const b=rows[2].getBoundingClientRect();return {start:{x:a.x+a.width/2,y:a.y+a.height/2},end:{x:a.x+a.width/2,y:b.y+b.height/2}}})()`)
@@ -124,7 +124,7 @@ async function ordering(route, expected, difficulty = 0) {
   await select('#difficulty', difficulty)
   await button('Začít hrát')
   if (route === 'rok') {
-    const colors = { advent: 'violet', christmas: 'white', 'ordinary-first': 'green', lent: 'violet', triduum: 'triduum', easter: 'white', 'ordinary-second': 'green' }
+    const colors = { 'advent-sunday': 'violet', 'christmas-day': 'white', epiphany: 'white', baptism: 'white', 'ash-wednesday': 'violet', 'palm-sunday': 'red', 'maundy-thursday': 'white', 'good-friday': 'red', 'easter-sunday': 'white', ascension: 'white', pentecost: 'red', trinity: 'white', 'corpus-christi': 'white', assumption: 'white', 'all-saints': 'white', 'christ-king': 'white', advent: 'violet', christmas: 'white', 'ordinary-first': 'green', lent: 'violet', triduum: 'triduum', easter: 'white', 'ordinary-second': 'green' }
     for (const id of expected) assert.ok(await evaluate(`document.querySelector(${JSON.stringify(`li[data-step-id="${id}"]`)}).classList.contains(${JSON.stringify(`season-${colors[id]}`)})`), `${id} uses its liturgical color`)
   }
   await button('Nápověda')
@@ -198,8 +198,20 @@ async function runner(smokeOnly = false) {
   console.log('PASS cesta: rendered-puddle controls reach the church and victory')
 }
 
+const celebrationOrder = ['advent-sunday', 'christmas-day', 'epiphany', 'baptism', 'ash-wednesday', 'palm-sunday', 'maundy-thursday', 'good-friday', 'easter-sunday', 'ascension', 'pentecost', 'trinity', 'corpus-christi', 'assumption', 'all-saints', 'christ-king']
+
 try {
   await chrome.send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false })
+  if (process.env.TEST_YEAR_LEVEL_ONLY === '1') {
+    await ordering('rok', celebrationOrder, 2)
+    await noOverflow('desktop celebrations')
+    await navigate('')
+    await chrome.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
+    await ordering('rok', celebrationOrder, 2)
+    await noOverflow('mobile celebrations')
+    assert.equal(chrome.errors.length, 0, JSON.stringify(chrome.errors))
+    console.log('PASS third year level: 16 celebrations, colors, mouse/touch sorting, results and restart on desktop/mobile')
+  } else {
   await navigate('')
   assert.ok((await all('a')).length >= 6, 'home contains game links')
   await noOverflow('desktop home')
@@ -215,6 +227,8 @@ try {
   await quiz('pictures', 3)
   await ordering('mse', ['first-reading', 'psalm', 'second-reading', 'acclamation', 'gospel', 'homily', 'creed', 'intercessions'], 2)
   await ordering('rok', ['advent', 'christmas', 'ordinary-first', 'lent', 'triduum', 'easter', 'ordinary-second'], 1)
+  await navigate('')
+  await ordering('rok', celebrationOrder, 2)
   await latin(3)
   for (const route of ['', 'pexeso', 'poznavacka', 'mse', 'rok', 'latina', 'cesta', 'slovnicek']) {
     await navigate(route)
@@ -246,6 +260,7 @@ try {
   assert.equal((await all('.memory-card')).length, 8, 'offline game plays')
   await chrome.send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 })
   console.log('PASS offline: production reload and playable pexeso without network')
+  }
 } finally {
   await chrome.close()
 }

@@ -3,5 +3,7 @@ export const sources: { title: string; url: string }[] = [
   { title: 'Mešní řád v celku — české a latinské znění', url: 'https://www.liturgie.cz/temata/mse-svata/mesni-rad-v-celku' },
   { title: 'Všeobecné pokyny k Římskému misálu — uspořádání mše, roucha a nádoby', url: 'https://m.liturgie.cz/misal/igmr.htm' },
   { title: 'Liturgické mezidobí', url: 'https://www.liturgie.cz/temata/liturgicky-cas/liturgicky-rok/liturgicke-mezidobi' },
+  { title: 'Český národní kalendář — svátky, slavnosti a barvy', url: 'https://www.liturgie.cz/temata/liturgicky-cas/cesky-narodni-kalendar' },
+  { title: 'Doba velikonoční — Nanebevstoupení a Seslání Ducha svatého', url: 'https://www.liturgie.cz/temata/liturgicky-cas/liturgicky-rok/doba-velikonocni' },
   { title: 'Velikonoční triduum', url: 'https://www.liturgie.cz/temata/liturgicky-cas/liturgicky-rok/velikonocni-triduum' },
 ]

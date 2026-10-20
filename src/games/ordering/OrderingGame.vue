@@ -19,6 +19,7 @@ const checks = ref(0)
 const hint = ref(false)
 const feedback = ref('')
 const current = computed(() => sets.value[difficulty.value]!)
+const celebrations = computed(() => props.kind === 'year' && current.value.kind === 'celebrations')
 const positions = computed(() => correctPositions(ordered.value, current.value.steps))
 const title = computed(() => props.kind === 'mass' ? 'Jak jde mše za sebou?' : 'Cesta liturgickým rokem')
 function start() {
@@ -53,7 +54,7 @@ useRoundFocus(phase)
 </script>
 <template>
   <div class="game-page ordering-page">
-    <GameHeader :title="title" :description="kind === 'mass' ? 'Každá část má své místo. Sestav správné pořadí.' : 'Začni adventem a projdi celý liturgický rok.'" />
+    <GameHeader :title="title" :description="kind === 'mass' ? 'Každá část má své místo. Sestav správné pořadí.' : celebrations ? 'Seřaď významné dny od první adventní neděle až ke Kristu Králi.' : 'Začni adventem a projdi celý liturgický rok.'" />
     <form v-if="phase === 'setup'" class="setup-panel" @submit.prevent="start">
       <div class="setup-symbol" :class="kind === 'mass' ? 'lilac' : 'yellow'" aria-hidden="true">{{ kind === 'mass' ? '≡' : '◷' }}</div>
       <h2>Jak podrobně se do toho pustíme?</h2>
@@ -64,8 +65,8 @@ useRoundFocus(phase)
     <template v-else-if="phase === 'play'">
       <div class="round-stats"><span>{{ current.title }}</span><button class="text-button" @click="hint = !hint">{{ hint ? 'Skrýt nápovědu' : 'Nápověda' }}</button></div>
       <p id="order-help" class="instruction">Přetáhni kartičky za úchyt ⠿ nebo použij šipky. Řadíme shora dolů.</p>
-      <aside v-if="hint" class="hint-panel"><strong>Začínáme: {{ current.steps[0]!.label }}</strong><p>{{ current.steps[0]!.description }}</p><p v-if="kind === 'year'">Mezidobí má dva úseky: jeden před postní dobou a druhý po době velikonoční.</p></aside>
-      <p v-if="kind === 'year'" class="muted content-note">Barvy ukazují základní barvu období; jednotlivé svátky mohou mít jinou.</p>
+      <aside v-if="hint" class="hint-panel"><strong>Začínáme: {{ current.steps[0]!.label }}</strong><p>{{ current.steps[0]!.description }}</p><p v-if="celebrations">Nejdřív advent, potom Vánoce a velikonoční svátky. Na konci roku je slavnost Ježíše Krista Krále.</p><p v-else-if="kind === 'year'">Mezidobí má dva úseky: jeden před postní dobou a druhý po době velikonoční.</p></aside>
+      <p v-if="celebrations" class="muted content-note">Řadíme jednotlivé dny, ne celá období. Barva patří danému slavení; datum Velikonoc se každý rok mění.</p><p v-else-if="kind === 'year'" class="muted content-note">Barvy ukazují základní barvu období; jednotlivé svátky mohou mít jinou.</p>
       <p v-if="kind === 'year' && difficulty === 1" class="muted content-note">Řadíme podle začátku období. Doba velikonoční začíná vigilií už během tridua.</p>
       <ol :ref="setList" class="order-list">
         <li v-for="(step, index) in ordered" :key="step.id" :data-step-id="step.id" :class="[season(step.id)?.className, dropClass(step.id), { 'position-correct': checked && positions[index], 'position-incorrect': checked && !positions[index] }]">

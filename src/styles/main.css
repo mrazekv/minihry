@@ -38,3 +38,5 @@
 .drag-grip{font-size:25px;color:#69745f}
 @media(max-width:620px){.order-list li{padding:8px 6px;gap:5px}.drag-handle{width:28px;min-width:28px}.order-controls{gap:3px}.step-number{width:22px;height:22px}.order-controls button{min-width:36px;width:36px}.step-label{font-size:12px}.step-label .season-label{font-size:9px}.order-drag-preview{padding:13px 10px;min-height:70px}.choice-button{min-height:58px}}
 @media(max-width:350px){.order-list li{gap:4px}.drag-handle{width:28px;min-width:28px}.step-number{width:18px;height:18px;font-size:10px}.order-controls button{min-width:32px;width:32px}.step-label{font-size:11px}}
+
+.season-red{--season-bg:#f5e4e0;--season-accent:#923e32;--season-edge:#bf7a6e;--season-chip:#ad493b}

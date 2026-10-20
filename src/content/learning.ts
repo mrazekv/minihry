@@ -4,6 +4,7 @@ export interface OrderStep {
   description: string
 }
 export interface LearningOrder {
+  kind?: 'seasons' | 'celebrations'
   id: string
   title: string
   steps: OrderStep[]
@@ -64,6 +65,30 @@ export const yearOrders: LearningOrder[] = [
       : step),
   },
   { id: 'year-detail', title: 'Rok s velikonočním triduem', steps: yearSteps },
+  {
+    id: 'year-celebrations', kind: 'celebrations', title: 'Rok se svátky a slavnostmi',
+    // Samostatné dny místo překrývajících se období: pořadí zůstává stejné
+    // i při pohyblivém datu Velikonoc. Zvěstování a další přesouvané slavnosti
+    // by bez konkrétního roku mohly mít více správných umístění.
+    steps: [
+      { id: 'advent-sunday', label: '1. neděle adventní', description: 'Začíná nový liturgický rok a příprava na Vánoce.' },
+      { id: 'christmas-day', label: 'Narození Páně (Vánoce)', description: '25. prosince slavíme narození Ježíše v Betlémě.' },
+      { id: 'epiphany', label: 'Zjevení Páně (Tři králové)', description: '6. ledna si připomínáme mudrce, kteří přišli vzdát úctu Ježíši.' },
+      { id: 'baptism', label: 'Křest Páně', description: 'Svátek Ježíšova křtu v Jordánu uzavírá vánoční dobu.' },
+      { id: 'ash-wednesday', label: 'Popeleční středa', description: 'Začíná postní doba. Popel na čele připomíná výzvu k obrácení.' },
+      { id: 'palm-sunday', label: 'Květná neděle', description: 'Připomínáme Ježíšův vjezd do Jeruzaléma a nasloucháme pašijím. Začíná Svatý týden.' },
+      { id: 'maundy-thursday', label: 'Zelený čtvrtek', description: 'Večerní mší na památku Večeře Páně začíná velikonoční triduum.' },
+      { id: 'good-friday', label: 'Velký pátek', description: 'Připomínáme Ježíšovo utrpení a smrt na kříži.' },
+      { id: 'easter-sunday', label: 'Zmrtvýchvstání Páně', description: 'Velikonoční neděle: slavíme, že Ježíš vstal z mrtvých.' },
+      { id: 'ascension', label: 'Nanebevstoupení Páně', description: 'Ve velikonoční době slavíme Ježíšův vstup do nebeské slávy u Otce.' },
+      { id: 'pentecost', label: 'Seslání Ducha svatého', description: 'Letnice uzavírají velikonoční dobu. Připomínáme dar Ducha svatého apoštolům.' },
+      { id: 'trinity', label: 'Nejsvětější Trojice', description: 'V neděli po Letnicích slavíme jediného Boha: Otce, Syna a Ducha svatého.' },
+      { id: 'corpus-christi', label: 'Těla a krve Páně (Boží tělo)', description: 'Po slavnosti Nejsvětější Trojice zvlášť slavíme Ježíšovu přítomnost v eucharistii.' },
+      { id: 'assumption', label: 'Nanebevzetí Panny Marie', description: '15. srpna slavíme přijetí Panny Marie s tělem i duší do nebeské slávy.' },
+      { id: 'all-saints', label: 'Všech svatých', description: '1. listopadu slavíme všechny svaté, i ty, jejichž jména neznáme.' },
+      { id: 'christ-king', label: 'Ježíše Krista Krále', description: 'Slavnost v poslední neděli liturgického roku. Po ní následuje další neděli nový advent.' },
+    ],
+  },
 ]
 
 export interface LatinPair {

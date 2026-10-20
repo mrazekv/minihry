@@ -23,7 +23,7 @@ npm run preview
 - Pexeso: 4, 6 nebo 10 dvojic; dva obrázky, nebo obrázek a název.
 - Poznávačka: 10 otázek, tři obtížnosti, obrázek → název i název → obrázek. Chybná odpověď umožní nový pokus.
 - Řazení mše: čtyři hlavní části, osm zastavení nebo podrobná bohoslužba slova v neděli. Kartičky lze přesouvat myší i dotykem za úchyt nebo dostupnými šipkami; Escape přetahování zruší.
-- Liturgický rok: základní přehled nebo přehled s velikonočním triduem. Dvě části mezidobí jsou rozlišeny. Karty používají základní liturgické barvy s textovým názvem; triduum má vícebarevné označení, protože jeho obřady nemají jednu společnou barvu.
+- Liturgický rok: tři úrovně — základní přehled, rok s velikonočním triduem a 16 významných dnů od první adventní neděle po Krista Krále. Nejvyšší úroveň obsahuje např. Zjevení a Křest Páně, Popeleční středu, Květnou neděli, Nanebevstoupení, Letnice, Nejsvětější Trojici, Boží tělo, Nanebevzetí Panny Marie a Všechny svaté. Dvě části mezidobí jsou rozlišeny. Karty používají základní liturgické barvy s textovým názvem; triduum má vícebarevné označení, protože jeho obřady nemají jednu společnou barvu.
 - Latina: 4, 6 nebo 8 dvojic podle obtížnosti.
 - Cesta ke kostelu: skákání přes kaluže, dvě rychlosti, pauza, tři pokusy. Ovládání tlačítkem, klepnutím na plátno, mezerníkem nebo šipkou nahoru. P/Escape pozastaví hru; při skrytí stránky se hra automaticky pozastaví.
 
