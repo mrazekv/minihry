@@ -12,6 +12,7 @@ import RunnerGame from './games/runner/RunnerGame.vue'
 import PreparationGame from './games/preparation/PreparationGame.vue'
 import OddOneGame from './games/odd-one/OddOneGame.vue'
 import ChurchGame from './games/church/ChurchGame.vue'
+import YearGame from './games/year/YearGame.vue'
 import './styles/main.css'
 const router = createRouter({
   history: createWebHashHistory(),
@@ -22,7 +23,7 @@ const router = createRouter({
     { path: '/pexeso', component: MemoryGame },
     { path: '/poznavacka', component: RecognitionGame },
     { path: '/mse', component: OrderingGame, props: { kind: 'mass' } },
-    { path: '/rok', component: OrderingGame, props: { kind: 'year' } },
+    { path: '/rok', component: YearGame },
     { path: '/latina', component: MatchingGame },
     { path: '/cesta', component: RunnerGame },
     { path: '/sakristie', component: PreparationGame },

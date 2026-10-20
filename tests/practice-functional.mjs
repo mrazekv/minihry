@@ -53,8 +53,11 @@ async function drag(from,to,touch,cancellation='') {
 }
 async function preparation(level,touch){
   await setup('sakristie',level)
+  assert.equal(await ev('document.querySelectorAll(".preparation-game .transfer-handle").length'),0,'no drag handles in preparation')
   const first=await ev('document.querySelector(".preparation-shelf .practice-item").dataset.itemId')
-  const handle=`.practice-item[data-item-id="${first}"] .transfer-handle`
+  const handle=`.practice-item[data-item-id="${first}"] .practice-item-choice`
+  await drag(handle,handle,touch);assert.deepEqual(await selected(),[first],'tap selects directly on picture')
+  await drag(handle,handle,touch);assert.deepEqual(await selected(),[],'tap returns picture')
   for(const cancel of ['outside','escape',...(touch?['cancel']:[])]){
     await drag(handle,'.preparation-tray',touch,cancel);assert.deepEqual(await selected(),[],`cancel: ${cancel}`)
   }

@@ -7,6 +7,9 @@ import { applyUpdate, offlineReady, registerOffline, updateReady } from './lib/o
 const route = useRoute()
 const logo = `${import.meta.env.BASE_URL}ministranti-brno.jpg`
 const isGame = computed(() => games.some(game => game.path === route.path))
+watch(() => preferences.value.largeText, value => {
+  document.documentElement.classList.toggle('large-text', value)
+}, { immediate: true })
 watch(() => route.fullPath, async () => {
   const title = games.find(game => game.path === route.path)?.title || (route.path === '/slovnicek' ? 'Slovníček' : route.path === '/o-aplikaci' ? 'O aplikaci' : '')
   document.title = title ? `${title} · miniHry` : 'miniHry — Malé hry pro ministranty'

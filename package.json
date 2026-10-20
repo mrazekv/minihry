@@ -12,6 +12,8 @@
     "test": "vitest run",
     "test:browser": "node tests/functional.mjs",
     "test:practice": "node tests/practice-functional.mjs",
+    "test:text": "node tests/typography.mjs",
+    "test:year": "node tests/year-functional.mjs",
     "test:validity": "node tests/validity.mjs",
     "test:pwa": "node tests/pwa.mjs"
   },

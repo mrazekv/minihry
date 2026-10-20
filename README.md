@@ -18,7 +18,7 @@ Stačí otevřít odkaz v prohlížeči na mobilu, tabletu nebo počítači. Bez
 | **Co sem nepatří?** | Objev, co spojuje tři ze čtyř obrázků. Ve výzvě zmizí i názvy; nápovědu si odkryješ na přání. |
 | **Najdi místo v kostele** | Najdi šest míst v obrázkovém plánku. Klepni na místo nebo na něj přetáhni název. |
 | **Jak jde mše za sebou?** | Seřaď části mše přetahováním nebo šipkami. Od čtyř hlavních částí až po podrobnější průběh. |
-| **Cesta liturgickým rokem** | Poskládej období nebo významné svátky a slavnosti. Tři úrovně s liturgickými barvami. |
+| **Cesta liturgickým rokem** | Doplň kartičky do kruhu nebo si zahraj „Co následuje?“. Tři úrovně od období po vybrané svátky a slavnosti, s liturgickými barvami. |
 | **Latina po kapkách** | Spoj známá latinská slovíčka a výrazy s českým významem. |
 | **Cesta ke kostelu** | Přeskakuj kaluže a dojdi až ke kostelu. Skákej klepnutím, mezerníkem nebo šipkou nahoru. |
 
@@ -40,7 +40,7 @@ Naučné hry nemají časový limit. Když se spleteš, můžeš to zkusit znovu
 
 Po prvním úplném načtení lze na podporovaných prohlížečích hrát i bez internetu. Připravenost oznámí text **„Připraveno na hraní offline“** v patičce. Aplikaci si také můžeš přidat na plochu zařízení, pokud to prohlížeč nabízí.
 
-V informacích o aplikaci můžeš omezit animace a obnovit nastavení. Nastavení zůstává pouze v daném zařízení; odpovědi ani historie hraní se neukládají.
+V informacích o aplikaci můžeš zapnout ještě větší písmo, omezit animace a obnovit nastavení. Nastavení zůstává pouze v daném zařízení; odpovědi ani historie hraní se neukládají.
 
 ## Nápady a zdrojový kód
 

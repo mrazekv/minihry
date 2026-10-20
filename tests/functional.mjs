@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { launchChrome, sleep } from './chrome.mjs'
+import { playYear } from './year-browser.mjs'
 
 const base = process.env.TEST_BASE_URL || process.env.TEST_URL || 'http://127.0.0.1:4173/'
 const chrome = await launchChrome()
@@ -198,19 +199,18 @@ async function runner(smokeOnly = false) {
   console.log('PASS cesta: rendered-puddle controls reach the church and victory')
 }
 
-const celebrationOrder = ['advent-sunday', 'christmas-day', 'epiphany', 'baptism', 'ash-wednesday', 'palm-sunday', 'maundy-thursday', 'good-friday', 'easter-sunday', 'ascension', 'pentecost', 'trinity', 'corpus-christi', 'assumption', 'all-saints', 'christ-king']
 
 try {
   await chrome.send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false })
   if (process.env.TEST_YEAR_LEVEL_ONLY === '1') {
-    await ordering('rok', celebrationOrder, 2)
+    await playYear(chrome, base, 2, 'circle', false)
     await noOverflow('desktop celebrations')
     await navigate('')
     await chrome.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
-    await ordering('rok', celebrationOrder, 2)
+    await playYear(chrome, base, 2, 'next', true)
     await noOverflow('mobile celebrations')
     assert.equal(chrome.errors.length, 0, JSON.stringify(chrome.errors))
-    console.log('PASS third year level: 16 celebrations, colors, mouse/touch sorting, results and restart on desktop/mobile')
+    console.log('PASS third year level: 16 celebrations in a circle and cyclic quiz, results and restart on desktop/mobile')
   } else {
   await navigate('')
   assert.ok((await all('a')).length >= 6, 'home contains game links')
@@ -219,16 +219,16 @@ try {
   await quiz()
   // IDs are the public content identifiers, not access to Vue internals.
   await ordering('mse', ['entrance', 'word', 'eucharist', 'dismissal'])
-  await ordering('rok', ['advent', 'christmas', 'ordinary-first', 'lent', 'easter', 'ordinary-second'])
+  await playYear(chrome, base, 0, 'circle', false)
   await latin()
   await runner(process.env.TEST_CHANGES_ONLY === '1')
   await chrome.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
   await memory(10, 'names')
   await quiz('pictures', 3)
   await ordering('mse', ['first-reading', 'psalm', 'second-reading', 'acclamation', 'gospel', 'homily', 'creed', 'intercessions'], 2)
-  await ordering('rok', ['advent', 'christmas', 'ordinary-first', 'lent', 'triduum', 'easter', 'ordinary-second'], 1)
+  await playYear(chrome, base, 1, 'circle', true)
   await navigate('')
-  await ordering('rok', celebrationOrder, 2)
+  await playYear(chrome, base, 2, 'next', true)
   await latin(3)
   for (const route of ['', 'pexeso', 'poznavacka', 'mse', 'rok', 'latina', 'cesta', 'slovnicek']) {
     await navigate(route)

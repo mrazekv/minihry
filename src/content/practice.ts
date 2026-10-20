@@ -36,7 +36,7 @@ export const oddTasks: OddTask[] = [
   { id: 'furniture', question: 'Tři věci patří k vybavení kostela jako nábytek. Co mezi ně nepatří?', members: ['altar', 'ambo', 'presiders-chair'], odd: 'paten', explanation: 'Oltář, ambon a sedes patří k zařízení kostela. Patena je malá eucharistická nádoba.', level: 1 },
   { id: 'bishop', question: 'Tři věci si biskup obléká nebo nasazuje. Kterou drží v ruce?', members: ['mitre', 'zucchetto', 'chasuble'], odd: 'crozier', explanation: 'Berlu biskup drží v ruce. Mitru, solideo a ornát má na sobě.', level: 2 },
   { id: 'clothing-fabric', question: 'Všechny čtyři věci jsou z látky. Která se neobléká?', members: ['chasuble', 'stole', 'cope'], odd: 'corporal', explanation: 'Ornát, štóla a pluviál se oblékají. Korporál se rozkládá na oltář pod eucharistické nádoby.', level: 2 },
-  { id: 'deacon-dress', question: 'Tři věci patří k oblečení jáhna při slavnostní mši. Co mezi ně nepatří?', members: ['alb', 'stole', 'dalmatic'], odd: 'chasuble', explanation: 'Jáhen nosí albu, štólu a dalmatiku. Ornát je roucho kněze.', level: 2 },
+  { id: 'deacon-dress', question: 'Tři věci patří k oblečení jáhna při slavnostní mši. Co mezi ně nepatří?', members: ['alb', 'stole', 'dalmatic'], odd: 'server-cassock-collar', explanation: 'Jáhen při slavnostní mši nosí albu, štólu a dalmatiku. Komže a límec na našem obrázku patří k ministrantskému oblečení.', level: 2 },
   { id: 'hands', question: 'Tři věci slouží k umytí a utření rukou. Co mezi ně nepatří?', members: ['lavabo', 'hand-towel', 'cruets'], odd: 'thurible', explanation: 'Voda z konvičky, miska a ručník pomáhají při mytí rukou. Kadidelnice slouží k okuřování.', level: 2 },
   { id: 'eucharist', question: 'Tři věci slouží k uchovávání nebo vystavení eucharistie. Co mezi ně nepatří?', members: ['ciborium', 'monstrance', 'tabernacle'], odd: 'holy-water-bucket', explanation: 'Ciborium a svatostánek slouží k uchovávání eucharistie, monstrance k jejímu vystavení. Kropenka obsahuje svěcenou vodu.', level: 2 },
 ]
@@ -47,7 +47,7 @@ export const churchPlaces = [
   { id: 'presiders-chair', name: 'Sedes', x: 77, y: 22, clue: 'Hledej sedadlo kněze, který vede bohoslužbu.' },
   { id: 'altar', name: 'Oltář', x: 50, y: 38, clue: 'Hledej stůl pro slavení eucharistie uprostřed presbytáře.' },
   { id: 'ambo', name: 'Ambon', x: 20, y: 40, clue: 'Hledej místo, ze kterého se čte Boží slovo.' },
-  { id: 'credence-table', name: 'Abak', x: 23, y: 22, clue: 'Hledej menší stolek s připravenými konvičkami.' },
+  { id: 'credence-table', name: 'Abak', x: 23, y: 19, clue: 'Hledej menší stolek s připravenými konvičkami.' },
   { id: 'baptismal-font', name: 'Křtitelnice', x: 85, y: 51, clue: 'Hledej nádobu s vodou určenou ke křtu.' },
 ] as const
 

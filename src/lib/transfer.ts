@@ -60,8 +60,9 @@ export function useTransfer(drop: (id: string, zone: string) => void) {
     if (state.moved && zone) drop(state.id, zone)
   }
   function escape(event: KeyboardEvent) { if (event.key === 'Escape') cancel() }
-  function handleClick(action: () => void) {
-    if (suppressClick) { suppressClick = false; return }
+  function handleClick(action: () => void, event?: MouseEvent) {
+    if (suppressClick && event?.detail !== 0) { suppressClick = false; return }
+    suppressClick = false
     action()
   }
   onBeforeUnmount(cancel)

@@ -67,7 +67,7 @@ try {
       assert.equal(choice.selected,1,`${route}: exactly one selected choice per group`)
       assert.equal(choice.allButtons,true,`${route}: choices expose toggle state without submitting the form`)
     }
-    if (route === '#/mse' || route === '#/rok') {
+    if (route === '#/mse') {
       // Longest option plus drag handles and arrows must fit a small phone.
       await browser.send('Emulation.setDeviceMetricsOverride',{ width:320,height:900,deviceScaleFactor:1,mobile:false })
       await browser.evaluate(`document.querySelector('.choice-field .choice-button:last-child').click(); document.querySelector('.setup-panel button[type=submit]').click()`)
@@ -92,7 +92,6 @@ try {
       assert.deepEqual(active.clipped,[],`${route}: all ordering row contents fit at 320px`)
       assert.equal(active.controlsFit,true,`${route}: drag and arrow targets fit and meet 24px minimum`)
       assert.equal(active.handlesNamed && active.described,true,`${route}: drag handles have names and instructions`)
-      if (route==='#/rok') assert.equal(active.colorsText,true,'Season colors have visible text equivalents')
       await browser.evaluate(`document.querySelector('.drag-handle').focus()`)
       const before = await browser.evaluate('document.querySelector(".order-list li").dataset.stepId')
       await browser.send('Input.dispatchKeyEvent',{ type:'keyDown',key:'ArrowDown',code:'ArrowDown',windowsVirtualKeyCode:40 })
