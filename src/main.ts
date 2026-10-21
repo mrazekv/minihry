@@ -12,6 +12,7 @@ import RunnerGame from './games/runner/RunnerGame.vue'
 import PreparationGame from './games/preparation/PreparationGame.vue'
 import OddOneGame from './games/odd-one/OddOneGame.vue'
 import ChurchGame from './games/church/ChurchGame.vue'
+import ProcessionGame from './games/procession/ProcessionGame.vue'
 import YearGame from './games/year/YearGame.vue'
 import './styles/main.css'
 const router = createRouter({
@@ -26,6 +27,7 @@ const router = createRouter({
     { path: '/rok', component: YearGame },
     { path: '/latina', component: MatchingGame },
     { path: '/cesta', component: RunnerGame },
+    { path: '/pruvod', component: ProcessionGame },
     { path: '/sakristie', component: PreparationGame },
     { path: '/vetrelec', component: OddOneGame },
     { path: '/kostel', component: ChurchGame },

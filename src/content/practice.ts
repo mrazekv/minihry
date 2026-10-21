@@ -16,6 +16,7 @@ export const preparationTasks: PreparationTask[] = [
   { id: 'lavabo', title: 'Připrav věci k umývání rukou kněze před eucharistickou modlitbou.', hint: 'Na jednom obrázku už je konvička s miskou. Přidej utěrku na ruce.', required: ['lavabo', 'hand-towel'], distractors: ['purificator', 'corporal', 'boat', 'pall'], explanation: 'Po přípravě darů, před eucharistickou modlitbou, si kněz umývá ruce. K lavabu patří voda, miska a ručník na ruce. Purifikatorium slouží k otírání kalicha.', level: 1 },
   { id: 'priest', title: 'Připrav liturgické oblečení pro kněze na běžnou mši.', hint: 'Přes albu patří pruh látky kolem krku a vrchní roucho.', required: ['alb', 'stole', 'chasuble'], distractors: ['dalmatic', 'mitre', 'rochet', 'cope', 'zucchetto'], explanation: 'Kněz si ke mši obléká přes albu štólu a ornát. Cingulum a další doplňky se připravují podle potřeby.', level: 2 },
   { id: 'deacon', title: 'Připrav slavnostní oblečení jáhna včetně vrchního roucha.', hint: 'Jáhen má štólu šikmo a vrchní roucho s rukávy.', required: ['alb', 'stole', 'dalmatic'], distractors: ['chasuble', 'mitre', 'cope', 'rochet', 'zucchetto'], explanation: 'Jáhen nosí přes albu štólu a dalmatiku. Štólu má šikmo z levého ramene k pravému boku.', level: 2 },
+  { id: 'bishop', title: 'Přijede biskup. Připrav mu oblečení a další věci, které používá při mši.', hint: 'K oblečení kněze přidej dvě pokrývky hlavy typické pro biskupa a předmět, který drží v ruce.', required: ['alb', 'stole', 'chasuble', 'zucchetto', 'mitre', 'crozier'], distractors: ['rochet', 'server-cassock-collar', 'cope'], explanation: 'Biskup má při mši albu, štólu a ornát, na hlavě fialové solideo a při některých částech mše také mitru. Používá také berlu, kterou drží v ruce. Pokrývky hlavy a berlu v určených chvílích odkládá.', level: 2 },
   { id: 'linens', title: 'Nachystej kalich tak, jak bývá připravený na oltáři.', hint: 'Ke kalichu patří plátno pod nádoby, utěrka na jeho otírání a pevný čtvercový kryt.', required: ['chalice', 'purificator', 'corporal', 'pall'], distractors: ['hand-towel', 'humeral-veil', 'boat', 'stole'], explanation: 'Připravili jsme kalich, purifikatorium, korporál a palu. Kalich stojí na rozloženém korporálu, purifikatorium slouží k jeho otírání a pala k zakrytí. Ručník na ruce má jiný účel.', level: 2 },
 ]
 
@@ -50,5 +51,3 @@ export const churchPlaces = [
   { id: 'credence-table', name: 'Abak', x: 23, y: 19, clue: 'Hledej menší stolek s připravenými konvičkami.' },
   { id: 'baptismal-font', name: 'Křtitelnice', x: 85, y: 51, clue: 'Hledej nádobu s vodou určenou ke křtu.' },
 ] as const
-
-export const handTowel = { id: 'hand-towel', name: 'Ručník na ruce' }

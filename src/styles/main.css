@@ -134,3 +134,14 @@
 .year-circle-choice>svg{width:38px;height:38px;flex-shrink:0}
 .year-circle-choice>span{max-width:100%;overflow-wrap:anywhere}
 .year-circle-choice small{font-size:.6rem;overflow-wrap:anywhere}
+
+.procession-game{max-width:620px}.procession-front{text-align:center;color:var(--green);font-size:.8rem;margin:12px}
+.procession-order{list-style:none;padding:0;display:grid;gap:10px}.procession-order>li{display:flex;align-items:center;flex-wrap:wrap;border:1.5px solid var(--line);background:var(--white);border-radius:13px;overflow:hidden}
+.procession-row-choice{display:flex;align-items:center;gap:8px;flex:1;min-width:0;border:0;background:transparent;touch-action:none;user-select:none;cursor:grab;text-align:left;padding:6px 10px;font-size:.8rem}
+.procession-row-choice>svg{width:110px;height:70px;flex-shrink:0}.procession-row-choice>strong{overflow-wrap:anywhere}.procession-row-choice:disabled{opacity:1;cursor:default}
+.procession-order-controls{display:flex;gap:4px;padding:6px}.procession-order-controls button{width:44px;height:44px;padding:0;font-size:1rem;background:#edf1e5;border:1px solid var(--line)}
+.procession-order>li>p{flex-basis:100%;margin:0;padding:5px 14px;font-size:.7rem;color:var(--green)}.procession-order .procession-correct{border-color:#7c9869;background:#edf2e3}.procession-order .procession-wrong{border-style:dashed;border-color:#b37960}
+.procession-explanations{font-size:.75rem;color:var(--muted);line-height:1.7}.procession-explanations li{margin:8px 0}.procession-ghost{width:170px;font-size:.7rem}.procession-ghost svg{width:140px;height:84px}
+.procession-walk-instruction{min-height:3em;margin:10px 0;font-size:.8rem}.procession-stage{display:block;width:100%;max-width:420px;height:auto;aspect-ratio:420/460;margin:auto;border:2px solid #c4ccb4;border-radius:13px;touch-action:none;user-select:none}
+.procession-controls{position:sticky;bottom:0;z-index:2;background:var(--paper);padding:10px 0;display:grid;grid-template-columns:1fr 2fr 1fr;gap:8px;max-width:420px;margin:auto}.procession-controls button{min-height:48px;font-size:.8rem;touch-action:none}.procession-controls .procession-stop{grid-column:1/-1}.procession-key-help{font-size:.65rem;line-height:1.7;margin:10px auto;max-width:420px}
+@media(max-width:620px){.procession-row-choice{gap:4px;padding:5px;font-size:.7rem}.procession-row-choice>svg{width:75px;height:58px}.procession-order-controls{flex-direction:column;padding:4px}.procession-order-controls button{height:44px;width:44px}.procession-order{gap:8px}.procession-game .question-title{font-size:1.25rem}}

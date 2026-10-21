@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { items } from '../src/content/items'
-import { churchPlaces, handTowel, oddTasks, preparationTasks } from '../src/content/practice'
+import { churchPlaces, oddTasks, preparationTasks } from '../src/content/practice'
 import { checkSelection } from '../src/lib/practice'
 
 describe('Příprava sakristie', () => {
@@ -13,9 +13,9 @@ describe('Příprava sakristie', () => {
     expect(checkSelection([], ['a']).correct).toBe(false)
   })
   it('má řešitelné úkoly, různé možnosti a samostatný ručník pro lavabo', () => {
-    const ids = new Set([...items.map(item => item.id), handTowel.id])
+    const ids = new Set(items.map(item => item.id))
     const svg = readFileSync(new URL('../src/assets/items.svg', import.meta.url), 'utf8')
-    expect(svg).toContain(`id="${handTowel.id}"`)
+    expect(svg).toContain('id="hand-towel"')
     expect(new Set(preparationTasks.map(task => task.id)).size).toBe(preparationTasks.length)
     for (const task of preparationTasks) {
       expect(task.required.length).toBeGreaterThanOrEqual(2)
@@ -34,7 +34,7 @@ describe('Příprava sakristie', () => {
 
 describe('Nové obrázkové hry', () => {
   it('nabízí právě čtyři různé obrázky a jednoho vetřelce', () => {
-    const ids = new Set([...items.map(item => item.id), handTowel.id])
+    const ids = new Set(items.map(item => item.id))
     expect(new Set(oddTasks.map(task => task.id)).size).toBe(oddTasks.length)
     for (const task of oddTasks) {
       expect(task.members).toHaveLength(3)

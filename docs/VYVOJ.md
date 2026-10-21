@@ -54,6 +54,7 @@ npm run test:browser
 npm run test:practice
 npm run test:text
 npm run test:year
+npm run test:procession
 npm run test:validity
 npm run test:pwa
 ```
@@ -91,3 +92,7 @@ Nová verze čeká na potvrzení tlačítkem „Aktualizovat“, dostupným mimo
 V `localStorage` je pouze nastavení obtížnosti poznávačky a omezení animací, nikoliv odpovědi nebo historie her. Nedostupné úložiště neblokuje hraní. Veškeré fonty, kresby a logo se načítají lokálně. Web nepotřebuje API klíče ani proměnné s tajnými údaji.
 
 Android balíček zatím není součástí projektu. Později lze produkční web přidat do projektu Capacitoru a využít stejné herní moduly. Současné soubory nejsou nikam publikovány samotným lokálním sestavením.
+
+Hra „Drž krok!“ (`/pruvod`) spojuje sestavení řad vstupního průvodu s vedením celé skupiny k oltáři. Lehká úroveň má tři řady, těžší přidává kadidlo a úzké místo. Pořadí vychází z jednoduchého průvodu bez jáhna a dalších kněží; kříž a dvě svíce tvoří jednu řadu. Akční část podporuje dotyk, tlačítka a klávesnici, dvě zastavení a pokračování po chybě. Při přepnutí okna se pozastaví.
+
+`npm run test:procession` ověřuje přetahování myší i dotykem, opravy pořadí, celý průchod oběma cestami, zpomalení, zastavení, pozastavení, restart a offline načtení. Čas animace je v testu řízený přes `requestAnimationFrame`; produkční hra nemá testovací rozhraní. Pravidla pohybu a dosažitelnost cíle ověřují také jednotkové testy.

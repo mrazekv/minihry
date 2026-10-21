@@ -1,5 +1,8 @@
-/** Zdroje ověřené při přípravě obsahu 20. 10. 2026. Výklady jsou stručné parafráze. */
+/** Zdroje ověřené při přípravě obsahu 21. 10. 2026. Výklady jsou stručné parafráze. */
 export const sources: { title: string; url: string }[] = [
+  { title: 'Vstupní průvod — pořadí ministrantů a nesených předmětů', url: 'https://www.liturgie.cz/temata/mse-svata/uvodni-obrady/pro-ministranty-prakticky' },
+  { title: 'Svatostánek a věčné světlo', url: 'https://www.liturgie.cz/temata/liturgicky-prostor/liturgicka-mista/svatostanek' },
+  { title: 'Velikonoční klapání místo zvonění — Ministranti Dolní Újezd', url: 'https://www.ministranti-du.cz/aktuality/zpravy/' },
   { title: 'Příprava darů — služba ministrantů a abak', url: 'https://www.liturgie.cz/temata/mse-svata/priprava-daru/prakticke-informace' },
   { title: 'Velikonoční vigilie — paškál a jeho symboly', url: 'https://m.liturgie.cz/misal/04triduum/04vigilie_1.htm' },
   { title: 'Křtitelnice — místo slavení křtu', url: 'https://www.liturgie.cz/temata/liturgicky-prostor/liturgicka-mista/krtitelnice' },

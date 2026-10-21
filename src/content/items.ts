@@ -271,5 +271,26 @@ export const items: LiturgicalItem[] = [
     "description": "Přípravný stolek poblíž oltáře. Ministranti na něm mají nachystané nádoby a další věci potřebné ke mši.",
     "note": "Před mší si na abaku zkontroluj, že jsou konvičky i další potřebné věci připravené. Při službě je pak snadno najdeš.",
     "level": 2
+  },
+  {
+    "id": "sanctuary-lamp",
+    "name": "Věčné světlo",
+    "description": "Lampička u svatostánku, která připomíná Kristovu přítomnost v eucharistii.",
+    "note": "Když je ve svatostánku uchovávána eucharistie, svítí u něj světlo. Na našem obrázku má lampička červené sklo.",
+    "level": 1
+  },
+  {
+    "id": "clapper",
+    "name": "Klepačka",
+    "description": "Dřevěný nástroj, kterým ministrant vydává klapavý zvuk místo zvonění.",
+    "note": "Používá se zejména o velikonočním triduu, když zvony a zvonky od Sláva na výsostech Bohu na Zelený čtvrtek až do stejného zpěvu při velikonoční vigilii mlčí.",
+    "level": 2
+  },
+  {
+    "id": "hand-towel",
+    "name": "Ručník na ruce",
+    "description": "Ručník, do kterého si kněz utírá ruce při jejich umývání po přípravě darů.",
+    "note": "Ručník patří k lavabu. K otírání kalicha slouží jiná utěrka: purifikatorium.",
+    "level": 1
   }
 ]

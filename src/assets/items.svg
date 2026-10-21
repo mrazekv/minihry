@@ -644,7 +644,7 @@
     <path d="M44 113h20m-17 2h17" stroke="#d4d6c4" stroke-width=".7"/>
   </g>
 </symbol>
-<!-- Herní pomůcka pro lavabo; nejde o purifikatorium. -->
+<!-- Ručník pro lavabo; nejde o purifikatorium. -->
 <symbol id="hand-towel" viewBox="0 0 160 160">
   <g fill="none" stroke="#655e4e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="m35 28 84 8 8 95-84-8Z" fill="#f4e8cf"/>
@@ -653,6 +653,48 @@
     <path d="m40 106 84 8m-84-4 84 8m-84-1 84 8" stroke="#90a7a1" stroke-width="2"/>
     <path d="m45 124 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6m6-5 1 6" stroke="#b4a98c" stroke-width="1"/>
     <path d="m64 34 8 85m17-83 8 86" stroke="#d7cbb0" stroke-width="1"/>
+  </g>
+</symbol>
+<symbol id="sanctuary-lamp" viewBox="0 0 160 160">
+  <g fill="none" stroke="#655e4e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="80" cy="15" rx="8" ry="5" fill="#e5cc94"/>
+    <path d="M74 19 48 76m32-56v49m6-50 26 57" stroke="#ad8c54" stroke-width="2"/>
+    <path d="m70 28-4 9m-3 8-4 9m-3 7-4 9m37-42 4 9m3 8 4 9m3 7 4 9" stroke="#f2dfaf" stroke-width="1"/>
+    <path d="M53 76h54l-8 48q-19 13-38 0Z" fill="#b76057"/>
+    <path d="m92 79 12-1-8 43q-7 6-16 7l7-12Z" fill="#934b49" stroke="none"/>
+    <path d="m60 83 4 32m4-32 2 20" stroke="#e9b9a1" stroke-width="2.5"/>
+    <path d="M74 112h12v9H74Z" fill="#f2e7c8" stroke-width="1"/>
+    <path d="M80 91q-12 13 0 21 12-8 0-21Z" fill="#f2d08a" stroke="#ad8055" stroke-width="1"/>
+    <path d="M80 100q-5 7 0 10 5-3 0-10Z" fill="#fff1bb" stroke="none"/>
+    <ellipse cx="80" cy="76" rx="32" ry="8" fill="#e5cc94"/>
+    <ellipse cx="80" cy="74" rx="23" ry="4" fill="#b18e54" stroke-width="1"/>
+    <path d="M51 78q29 11 58 0m-47 46q18 9 36 0l7 8q-25 13-50 0Z" fill="#d6b77b"/>
+    <path d="m60 131 8 3m7 1h10m7-1 8-3" stroke="#f4e1af" stroke-width="2"/>
+    <path d="m70 137 10 9 10-9" fill="#dfc28a"/>
+    <circle cx="80" cy="146" r="3" fill="#b49257"/>
+  </g>
+</symbol>
+<symbol id="clapper" viewBox="0 0 160 160">
+  <g fill="none" stroke="#655e4e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M73 107h14v35q-7 7-14 0Z" fill="#c49a6a"/>
+    <path d="M83 111h4v31q-2 3-4 3Z" fill="#a97e50" stroke="none"/>
+    <path d="M36 47h88v70H36Z" fill="#ac8053"/>
+    <rect x="32" y="42" width="88" height="70" rx="3" fill="#d5b487"/>
+    <path d="M36 47h80v61H36Z" stroke="#b18b5c" stroke-width="1"/>
+    <path d="m39 57 28 1m23-1h19m-69 15h15m43 0h12m-70 20 24-1m31 4 16 1m-65 7h17" stroke="#b68f62" stroke-width="1"/>
+    <path d="M43 81q9-6 16 0-9 5-16 0Zm57 21q6-5 11-1" stroke="#bc976c" stroke-width="1"/>
+    <path d="M71 87h18v15H71Z" fill="#a4a59a"/>
+    <circle cx="75" cy="96" r="1.5" fill="#655e4e"/><circle cx="85" cy="96" r="1.5" fill="#655e4e"/>
+    <path d="m77 90-6-43 9-1 6 43Z" fill="#bf9665"/>
+    <path d="m73 51 5 34" stroke="#efcf9d" stroke-width="2"/>
+    <path d="m55 30 40-5 3 21-40 5Z" fill="#d6b184"/>
+    <path d="m95 25 6 5 3 21-6-5Z" fill="#a67c50"/>
+    <path d="m58 51 40-5 6 5-40 5Z" fill="#b18a5c"/>
+    <path d="m61 36 26-3m-25 10 14-2" stroke="#edcea3" stroke-width="2"/>
+    <circle cx="81" cy="89" r="3.5" fill="#c1c1b4"/>
+    <path d="M42 20q-12 11-13 23m82-23q13 9 16 21" stroke="#a8b69a" stroke-width="2"/>
+    <path d="M34 17q-13 11-15 23m99-23q14 10 18 23" stroke="#cad1b9" stroke-width="1.5"/>
+    <path d="m77 123 1 14" stroke="#edcea3" stroke-width="2"/>
   </g>
 </symbol>
 </svg>

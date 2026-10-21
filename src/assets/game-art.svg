@@ -48,4 +48,16 @@
   <path d="M110 27v12m-4-8h8" stroke="#9a8554" stroke-width="2"/>
   <path d="M175 73q-16-25-16-34a16 16 0 0 1 32 0q0 9-16 34Z" fill="#ba7f66" stroke="#99654f" stroke-width="1.5"/><circle cx="175" cy="39" r="6" fill="#fff4dd"/>
 </symbol>
+<symbol id="procession-art" viewBox="0 0 220 130">
+  <path d="m35 130 35-115h80l35 115" fill="#eee1bf"/><path d="M110 130V16" stroke="#c4caaa" stroke-width="2" stroke-dasharray="4 8"/>
+  <g stroke="#655e4e" stroke-width="1.3" stroke-linejoin="round">
+    <g fill="#292b29"><path d="m96 87-7 31h32l-7-31Z"/><path d="m54 47-6 30h27l-6-30Z"/><path d="m150 47-6 30h27l-6-30Z"/><path d="m99 27-6 30h27l-6-30Z"/></g>
+    <g fill="#fff8e8"><path d="m96 86-12 9 4 14 6-3v5h22v-5l6 3 4-14-12-9-9 4Z"/><path d="m54 46-11 8 4 12 5-3v6h18v-6l5 3 4-12-10-8-8 4Z"/><path d="m150 46-11 8 4 12 5-3v6h18v-6l5 3 4-12-10-8-8 4Z"/><path d="m99 26-11 8 4 12 5-3v6h18v-6l5 3 4-12-10-8-8 4Z"/></g>
+    <g fill="#e6bd95"><circle cx="105" cy="79" r="10"/><circle cx="61" cy="39" r="9"/><circle cx="157" cy="39" r="9"/><circle cx="106" cy="19" r="9"/></g>
+    <path d="M106 5v53M96 16h20" stroke="#b49254" stroke-width="3"/>
+    <path d="M61 47v31m96-31v31" stroke="#b49254" stroke-width="2.5"/>
+    <path d="M57 43V28h8v15m88 0V28h8v15" fill="#fff1c9"/>
+    <path d="M61 17q-6 8 0 10 6-2 0-10Zm96 0q-6 8 0 10 6-2 0-10Z" fill="#d5aa59" stroke="none"/>
+  </g>
+</symbol>
 </svg>

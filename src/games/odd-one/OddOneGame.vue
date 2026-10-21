@@ -6,7 +6,7 @@ import ItemArt from '../../components/ItemArt.vue'
 import PracticeItem from '../../components/PracticeItem.vue'
 import ResultPanel from '../../components/ResultPanel.vue'
 import { items } from '../../content/items'
-import { handTowel, oddTasks } from '../../content/practice'
+import { oddTasks } from '../../content/practice'
 import type { OddTask } from '../../content/practice'
 import { shuffle } from '../../lib/game'
 import { useRoundFocus } from '../../lib/focus'
@@ -23,7 +23,7 @@ const usedHint = ref(false)
 const firstTry = ref(0)
 const message = ref('')
 const current = computed(() => rounds.value[index.value]!)
-const lookup = new Map([...items, handTowel].map(item=>[item.id,item]))
+const lookup = new Map(items.map(item=>[item.id,item]))
 function resetRound() { wrong.value=[]; solved.value=false; hinted.value=false; usedHint.value=false; message.value=''; options.value=shuffle([...current.value.members,current.value.odd]) }
 function start() { rounds.value=shuffle(oddTasks.filter(task=>task.level<=difficulty.value)); index.value=0; firstTry.value=0; resetRound(); phase.value='play' }
 function answer(id: string) {

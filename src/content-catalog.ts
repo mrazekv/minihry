@@ -7,5 +7,6 @@ export const games = [
   { path: '/mse', title: 'Jak jde mše za sebou?', description: 'Poskládej části mše do správného pořadí.', note: 'Řazení · Od základů dál', art: 'order-art', color: 'lilac' },
   { path: '/rok', title: 'Cesta liturgickým rokem', description: 'Doplň kruh roku nebo zjisti, co následuje.', note: 'Kruh roku · Co následuje?', art: 'year-art', color: 'yellow' },
   { path: '/latina', title: 'Latina po kapkách', description: 'Spoj latinské výrazy s českým významem.', note: 'Spojování · Krátké výrazy', art: 'latin-art', color: 'rose' },
+  { path: '/pruvod', title: 'Drž krok!', description: 'Seřaď průvod a doveď ho společně k oltáři.', note: 'Pořadí a postřeh · 2 obtížnosti', art: 'procession-art', color: 'sage' },
   { path: '/cesta', title: 'Cesta ke kostelu', description: 'Hop přes kaluž a hurá dál!', note: 'Postřeh · Jedno tlačítko', art: 'runner-art', color: 'blue' },
 ] as const
