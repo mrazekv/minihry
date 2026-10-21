@@ -23,8 +23,15 @@ export async function playYear(browser,base,level=0,mode='circle',touch=false){
   assert.equal(await ev('document.querySelectorAll(".order-list").length'),0,'year no longer uses vertical sorting')
   if(mode==='circle'){
     assert.equal(await ev('document.querySelectorAll(".year-slot").length'),steps.length)
-    for(let round=0;round<steps.length-1;round++){
-      const index=round+1,id=steps[index].id
+    const firstIndex=level===0?0:1
+    if(level===0){
+      assert.equal(await ev('document.querySelector(".year-question").textContent'), 'Čím začíná liturgický rok?')
+      assert.equal(await ev('document.querySelectorAll(".year-slot[data-filled-id]").length'),0,'begin with an empty circle')
+      assert.equal(await ev('document.querySelectorAll(".year-slot svg").length'),0,'future slots do not reveal their symbols')
+      assert.equal(await ev('Number(getComputedStyle(document.querySelector(".year-slot-future")).opacity)<=.15'),true,'future slots are faint')
+    }
+    for(let round=0;round<steps.length-firstIndex;round++){
+      const index=round+firstIndex,id=steps[index].id
       const selector=`.year-slot[data-slot-index="${index}"]`
       const choice=`.year-circle-choice[data-step-id="${id}"]`
       assert.deepEqual(await ev('Array.from(document.querySelectorAll(".year-slot[data-filled-id]")).map(e=>e.dataset.filledId)'),steps.slice(0,index).map(step=>step.id),'circle advances in calendar order')
@@ -32,7 +39,7 @@ export async function playYear(browser,base,level=0,mode='circle',touch=false){
       assert.equal(await ev('document.querySelectorAll(".year-slot:not(:disabled)").length'),1,'no guessing of other positions')
       if(round===0){
         await click('.year-hint')
-        assert.equal(await ev('document.querySelector("#year-hint").textContent.includes("Navazujeme")'),true)
+        assert.equal(await ev('document.querySelector("#year-hint").textContent.trim().length>0'),true)
         await click(`.year-circle-choice:not([data-step-id="${id}"])`)
         assert.equal(await ev('!!document.querySelector(".year-answer-wrong")'),true)
         // Move the selected candidate to the one highlighted target, or cancel outside.
